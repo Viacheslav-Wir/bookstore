@@ -1,0 +1,168 @@
+.vo-footer-border{
+    height: 11px;
+    background: rgba(241,231,103,0.2);
+    background: -moz-linear-gradient(left, rgba(241,231,103,0.2) 0%, rgba(249,214,28,0.5) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(241,231,103,0.2)), color-stop(100%, rgba(249,214,28,0.5)));
+    background: -webkit-linear-gradient(left, rgba(241,231,103,0.2) 0%, rgba(249,214,28,0.5) 100%);
+    background: -o-linear-gradient(left, rgba(241,231,103,0.2) 0%, rgba(249,214,28,0.5) 100%);
+    background: -ms-linear-gradient(left, rgba(241,231,103,0.2) 0%, rgba(249,214,28,0.5) 100%);
+    background: linear-gradient(to right, rgba(241,231,103,0.2) 0%, rgba(249,214,28,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#f9d61c', GradientType=1 );
+}
+.vo-footer {
+    display: flex;
+    position: relative;
+    z-index: 10;
+    min-height: 274px;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 16px;
+    font-family: Philosopher;
+    background: rgba(255, 255, 255, 0.1);
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 1%, rgba(196, 196, 196, 1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255, 255, 255, 0.1)), color-stop(0%, rgba(255, 255, 255, 1)), color-stop(1%, rgba(246, 246, 246, 1)), color-stop(100%, rgba(196, 196, 196, 1)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 1%, rgba(196, 196, 196, 1) 100%);
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 1%, rgba(196, 196, 196, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 1%, rgba(196, 196, 196, 1) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 1%, rgba(196, 196, 196, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#c4c4c4', GradientType=1);
+
+    a {
+        color: $main-text;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .vo-img {
+        height: 222px;
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background: #FEF9DD;
+        overflow: hidden;
+        @include breakpoint(medium){
+            height: 100%;            
+            background: none;
+        }
+        &--first,
+        &--second {
+            display: flex;
+            justify-content: space-evenly;
+            @include breakpoint(medium){
+                justify-content: space-around;
+            }
+        }
+        &--first{
+            padding-top: 40px;
+            padding-bottom: 30px;
+            @include breakpoint(medium){
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+        &--second{
+            padding-bottom: 10px;
+            @include breakpoint(medium){
+                padding-bottom: 0;
+            }
+        }
+    }
+    .vo-lp-gray{
+        width: 20px;
+        height: 20px;
+        @include breakpoint(medium){
+            width: 75px;
+            height: 70px;
+        }
+    }
+    .vo-menu {
+        display: flex;
+        height: 220px;
+        background: #FDF5C6;
+        justify-content: space-evenly;
+        @include breakpoint(medium){
+            height: 100%;
+            background: none;           
+            justify-content: space-around;
+        }
+        a{
+            padding: 8px;
+            @include breakpoint(medium){
+                padding: 0.7rem 1rem;         
+            }
+        }
+        &--first,
+        &--second {
+            height: 100%;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            @include breakpoint(medium){
+                margin-top: 110px; 
+                padding-top: 0;
+                padding-bottom: 0;          
+            }
+        }
+        &--first {
+            text-transform: uppercase;
+        }
+    }
+    .vo-line {
+        height: 100%;
+
+        &-menu {
+            height: 100%;
+            margin-left: 25%;
+            margin-top: 70px;
+
+            li {
+                display: flex;
+            }
+        }
+        &--first,
+        &--second {
+            display: flex;
+            align-items: center;
+            margin-left: calc(25% + 15px);
+
+            svg {
+                margin-right: 10px;
+            }
+        }
+        &--first {
+            margin-bottom: 35px;
+        }
+    }
+    .vo-line-menu--links {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            padding-bottom: 5px;
+            padding-top: 0;
+            padding-left: 20px;
+        }
+    }
+    .vo-footer-bg-center {
+        position: absolute;
+        z-index: 1;
+        top: -11px;
+        left: calc(50% - 246.18px);
+        min-width: 492.36px;
+        min-height: 274px;
+        background-color: rgba(196, 196, 196, 0.25);
+        border-top: 11px solid rgba(249, 214, 28, 0.25);
+    }
+    .vo-footer-bg-center--back {
+        position: absolute;
+        z-index: 0;
+        top: -11px;
+        left: calc(50% - 246.18px);
+        min-width: 492.36px;
+        min-height: 274px;
+        background-color: #fff;
+        border-top: 11px solid #fff;
+    }
+}

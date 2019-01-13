@@ -9,6 +9,7 @@
         margin: 0 auto;
     }
     p{
+<<<<<<< HEAD
         display: none;
         
         @include breakpoint(medium large){
@@ -18,6 +19,12 @@
             color: #999999;
     
         }
+=======
+        font-family: $ubuntu-font-family;
+        font-size: 16px;
+        color: #999999;
+        margin-bottom: 0;
+>>>>>>> 0fab285153689322779758286e5188498dfa0e24
     }
     input{
         background: #FFFFFF;
