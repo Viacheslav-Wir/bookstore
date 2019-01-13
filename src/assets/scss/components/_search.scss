@@ -1,0 +1,42 @@
+//search
+.hzh-search{
+    font-family: $ubuntu-font-family;
+    padding-top: 49px;
+    padding-bottom: 50px;
+    form{
+        position: relative;
+        width: 60%;
+        margin: 0 auto;
+    }
+    p{
+        font-family: $ubuntu-font-family;
+        font-size: 16px;
+        color: #999999;
+    }
+    input{
+        background: #FFFFFF;
+        border: 1px solid #DFDFDF;
+        box-sizing: border-box;
+        padding: 25px;
+    }
+    .submit{
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-family: $philosopher-font-family;
+        background: #FFFEFE;
+        border: 1px solid #636262;
+        box-sizing: border-box;
+        cursor: pointer;   
+        padding: 10px 15px 10px 13px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        &:hover{
+            font-weight: bold;
+        }
+        svg{
+            margin-right: 6px;
+        }
+    }
+}
