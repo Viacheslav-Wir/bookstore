@@ -1,0 +1,68 @@
+
+.ok-event-home__title{
+    margin-bottom: 50px;
+    
+    
+    a{
+ 
+    padding-left: 100px;
+    font-size: 36px;
+    color: #110601;
+    position: relative;
+    
+
+   
+    &:hover{
+        color: #F9D61C;
+    }
+
+    &::before{
+        position: absolute;
+        bottom: 0;
+        left: 71px;
+        width: 412px;
+        height: 1px;
+        content: "";
+        background: #110601;
+        
+    }
+}
+}
+.ok-event-home{
+    
+    padding: 70px 0 100px;
+    font-family: 'Philosopher', sans-serif;
+
+
+}
+.ok-event-img{
+    display: flex;
+    justify-content: flex-end;
+    z-index: 0;
+    margin-bottom: -64px;
+    img{
+        z-index: -1;
+        
+        
+    }
+    
+}
+.ok-event-info{
+   background: rgba(251, 255, 252, 0.85);
+    color: #110601;
+    z-index: 111;
+    padding: 0 36px 17px 0 ;
+    
+    z-index: 11;
+    h4{
+        font-size: 24px;
+        margin-bottom: 6px;
+        font-family: 'Forum', cursive;
+    }
+    p{
+        font-size: 14px;
+        margin-bottom: 0;
+        font-weight: 300;
+        font-family: 'Ubuntu', sans-serif;
+    }
+}
