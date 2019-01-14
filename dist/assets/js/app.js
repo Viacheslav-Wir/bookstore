@@ -21570,7 +21570,22 @@ __webpack_require__(/*! foundation-sites */ "./node_modules/foundation-sites/dis
 //import './lib/foundation-explicit-pieces';
 
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation(); // $(window).on('resize', function () {
+//     if($(window).width() <= 600){
+//         (function($) {
+//             $(function() {
+//                 $('a.tabs__caption').each(function() {
+//                     $(this).find('ul').each(function(i) {
+//                     $(this).click(function(){
+//                     $(this).addClass('active').siblings().removeClass('active')
+//                     .find('ul.tabs__content').removeClass('active').eq(i).addClass('active');
+//                     });
+//                     });
+//                     });
+//                 })
+//             })(jQuery)
+//     }
+// })
 
 /***/ }),
 
@@ -21581,7 +21596,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/wir/Beetroot/Front-end/teamwork/bookstore/src/assets/js/app.js */"./src/assets/js/app.js");
+module.exports = __webpack_require__(/*! /home/wir/Beetroot/Front-end/teamwork/example/src/assets/js/app.js */"./src/assets/js/app.js");
 
 
 /***/ })
