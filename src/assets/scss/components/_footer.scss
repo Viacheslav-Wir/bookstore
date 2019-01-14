@@ -100,7 +100,8 @@
             padding-top: 30px;
             padding-bottom: 30px;
             @include breakpoint(medium){
-                margin-top: 110px; 
+                // margin-top: 110px;
+                justify-content: center;
                 padding-top: 0;
                 padding-bottom: 0;          
             }
@@ -115,8 +116,8 @@
         &-menu {
             height: 100%;
             margin-left: 25%;
-            margin-top: 70px;
-
+            // margin-top: 70px;
+            justify-content: center;
             li {
                 display: flex;
             }
@@ -138,7 +139,6 @@
     .vo-line-menu--links {
         display: flex;
         flex-direction: column;
-
         a {
             padding-bottom: 5px;
             padding-top: 0;
