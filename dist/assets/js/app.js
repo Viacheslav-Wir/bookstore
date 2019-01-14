@@ -21586,6 +21586,17 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation(); // $(windo
 //             })(jQuery)
 //     }
 // })
+// Menu header adaptive give class for section
+
+var menuTogle = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.ok-menu-toggle, .ok-menu-adatpive');
+var mobNav = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.ok-menu-adatpive');
+var burg = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.ok-menu-toggle');
+menuTogle.on('click', function () {
+  return mobNav.toggleClass('ok-open');
+});
+menuTogle.on('click', function () {
+  return burg.toggleClass('ok-click');
+});
 
 /***/ }),
 
