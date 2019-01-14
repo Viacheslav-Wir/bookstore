@@ -21612,7 +21612,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('button.ok-show-password').click(f
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! d:\Lessons\Bookstore\bookstore-2.0\bookstore\src\assets\js\app.js */"./src/assets/js/app.js");
+module.exports = __webpack_require__(/*! /home/wir/Beetroot/Front-end/teamwork/example/src/assets/js/app.js */"./src/assets/js/app.js");
 
 
 /***/ })
