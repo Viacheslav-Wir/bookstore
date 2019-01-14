@@ -15,3 +15,12 @@ require('foundation-sites');
 
 
 $(document).foundation();
+
+
+
+// Menu header adaptive give class for section
+const menuTogle = $('.ok-menu-toggle, .ok-menu-adatpive');
+const mobNav = $('.ok-menu-adatpive');
+const burg = $('.ok-menu-toggle');    
+menuTogle.on('click', () => mobNav.toggleClass('ok-open'));
+menuTogle.on('click', () => burg .toggleClass('ok-click')); 
