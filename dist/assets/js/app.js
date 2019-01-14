@@ -21556,9 +21556,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var what_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! what-input */ "./node_modules/what-input/dist/what-input.js");
 /* harmony import */ var what_input__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(what_input__WEBPACK_IMPORTED_MODULE_1__);
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'ok'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'hzh'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'vo'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _ok__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ok */ "./src/assets/js/ok.js");
+/* harmony import */ var _ok__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_ok__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _hzh__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./hzh */ "./src/assets/js/hzh.js");
+/* harmony import */ var _hzh__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_hzh__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _ov__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ov */ "./src/assets/js/ov.js");
+/* harmony import */ var _ov__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_ov__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -21577,6 +21580,68 @@ __webpack_require__(/*! foundation-sites */ "./node_modules/foundation-sites/dis
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
+
+/***/ }),
+
+/***/ "./src/assets/js/hzh.js":
+/*!******************************!*\
+  !*** ./src/assets/js/hzh.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// $(window).on('resize', function () {
+//     if($(window).width() <= 600){
+//         (function($) {
+//             $(function() {
+//                 $('a.tabs__caption').each(function() {
+//                     $(this).find('ul').each(function(i) {
+//                     $(this).click(function(){
+//                     $(this).addClass('active').siblings().removeClass('active')
+//                     .find('ul.tabs__content').removeClass('active').eq(i).addClass('active');
+//                     });
+//                     });
+//                     });
+//                 })
+//             })(jQuery)
+//     }
+// })
+
+/***/ }),
+
+/***/ "./src/assets/js/ok.js":
+/*!*****************************!*\
+  !*** ./src/assets/js/ok.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// Menu header adaptive give class for section
+var menuTogle = $('.ok-menu-toggle, .ok-menu-adatpive');
+var mobNav = $('.ok-menu-adatpive');
+var burg = $('.ok-menu-toggle');
+menuTogle.on('click', function () {
+  return mobNav.toggleClass('ok-open');
+});
+menuTogle.on('click', function () {
+  return burg.toggleClass('ok-click');
+}); //show pass for form
+
+var pass = $('#ok-show-pass__form');
+$('button.ok-show-password').click(function () {
+  pass.attr('type', pass.attr('type') === 'password' ? 'text' : 'password');
+});
+
+/***/ }),
+
+/***/ "./src/assets/js/ov.js":
+/*!*****************************!*\
+  !*** ./src/assets/js/ov.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
