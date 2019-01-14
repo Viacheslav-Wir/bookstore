@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 // Menu header adaptive give class for section
 const menuTogle = $('.ok-menu-toggle, .ok-menu-adatpive');
 const mobNav = $('.ok-menu-adatpive');

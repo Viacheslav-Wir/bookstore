@@ -1,8 +1,5 @@
 import $ from 'jquery';
 import 'what-input';
-import "./ok";
-import "./hzh";
-import "./ov";
 
 // Foundation JS relies on a global varaible. In ES6, all imports are hoisted
 // to the top of the file so if we used`import` to import Foundation,
@@ -17,3 +14,7 @@ require('foundation-sites');
 //import './lib/foundation-explicit-pieces';
 
 $(document).foundation();
+
+import "./ok";
+import "./hzh";
+import "./ov";

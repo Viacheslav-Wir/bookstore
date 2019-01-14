@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 // $(window).on('resize', function () {
 //     if($(window).width() <= 600){
 //         (function($) {
