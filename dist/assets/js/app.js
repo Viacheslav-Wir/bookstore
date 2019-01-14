@@ -21556,6 +21556,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var what_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! what-input */ "./node_modules/what-input/dist/what-input.js");
 /* harmony import */ var what_input__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(what_input__WEBPACK_IMPORTED_MODULE_1__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'ok'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'hzh'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'vo'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
+
+
 
  // Foundation JS relies on a global varaible. In ES6, all imports are hoisted
 // to the top of the file so if we used`import` to import Foundation,
@@ -21570,38 +21576,7 @@ __webpack_require__(/*! foundation-sites */ "./node_modules/foundation-sites/dis
 //import './lib/foundation-explicit-pieces';
 
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation(); // $(window).on('resize', function () {
-//     if($(window).width() <= 600){
-//         (function($) {
-//             $(function() {
-//                 $('a.tabs__caption').each(function() {
-//                     $(this).find('ul').each(function(i) {
-//                     $(this).click(function(){
-//                     $(this).addClass('active').siblings().removeClass('active')
-//                     .find('ul.tabs__content').removeClass('active').eq(i).addClass('active');
-//                     });
-//                     });
-//                     });
-//                 })
-//             })(jQuery)
-//     }
-// })
-// Menu header adaptive give class for section
-
-var menuTogle = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.ok-menu-toggle, .ok-menu-adatpive');
-var mobNav = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.ok-menu-adatpive');
-var burg = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.ok-menu-toggle');
-menuTogle.on('click', function () {
-  return mobNav.toggleClass('ok-open');
-});
-menuTogle.on('click', function () {
-  return burg.toggleClass('ok-click');
-}); //show pass for form
-
-var pass = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ok-show-pass__form');
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('button.ok-show-password').click(function () {
-  pass.attr('type', pass.attr('type') === 'password' ? 'text' : 'password');
-});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
 
 /***/ }),
 

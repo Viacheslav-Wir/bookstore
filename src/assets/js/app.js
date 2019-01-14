@@ -1,5 +1,8 @@
 import $ from 'jquery';
 import 'what-input';
+import "ok";
+import "hzh";
+import "vo";
 
 // Foundation JS relies on a global varaible. In ES6, all imports are hoisted
 // to the top of the file so if we used`import` to import Foundation,
@@ -14,34 +17,3 @@ require('foundation-sites');
 //import './lib/foundation-explicit-pieces';
 
 $(document).foundation();
-
-// $(window).on('resize', function () {
-//     if($(window).width() <= 600){
-//         (function($) {
-//             $(function() {
-//                 $('a.tabs__caption').each(function() {
-//                     $(this).find('ul').each(function(i) {
-//                     $(this).click(function(){
-//                     $(this).addClass('active').siblings().removeClass('active')
-//                     .find('ul.tabs__content').removeClass('active').eq(i).addClass('active');
-//                     });
-//                     });
-//                     });
-//                 })
-//             })(jQuery)
-//     }
-// })
-
-// Menu header adaptive give class for section
-const menuTogle = $('.ok-menu-toggle, .ok-menu-adatpive');
-const mobNav = $('.ok-menu-adatpive');
-const burg = $('.ok-menu-toggle');    
-menuTogle.on('click', () => mobNav.toggleClass('ok-open'));
-menuTogle.on('click', () => burg .toggleClass('ok-click')); 
-
-//show pass for form
-
-let pass = $('#ok-show-pass__form');
-$('button.ok-show-password').click(function() {
-  pass.attr('type', pass.attr('type') === 'password' ? 'text' : 'password');
-});
