@@ -1,0 +1,165 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;
+    margin:0;}
+ 
+
+.ok-regist__block{
+    font-family: 'Philosopher', sans-serif;
+  
+    max-width: 520px;
+    background: #fff;
+    padding: 50px 100px ;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    form{
+        width: 100%;
+    }
+   
+}
+.ok-form-text{
+    text-align: center;
+}
+.ok-regist{
+    &__item{
+        margin: 0;
+        list-style: none;
+        li{
+            input{
+                border: 0;
+                border-bottom: 1px solid #7F7979;
+                box-shadow: none;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+    padding: 61px 0 124px;
+    font-size: 16px;
+    background-image: url(../img/bg-form.jpg);
+    background-size: cover;
+    font-family: 'Philosopher', sans-serif;
+    &__title{
+        font-size: 36px;
+        color: #110601;
+        font-family: 'Philosopher', sans-serif;
+        margin-bottom: 27px;
+    }
+    &__subtitle{
+        margin-bottom: 45px;
+        a{
+            text-decoration: none;
+            margin-left: 13px;
+            color: #110601;
+            border-bottom: 1px solid transparent;
+            
+            &:hover{
+                border-bottom: 1px solid #110601;
+            }
+        }
+    }
+}
+.ok-form-text{
+    margin-bottom: 45px;
+}
+.ok-form-social-text{
+    margin-bottom: 15px;
+}
+.ok-form-social{
+    a{
+      
+        svg{
+            width: 40px;
+            height: 25px;
+            color: #110601;
+            &:hover{
+                color:#F9D61C;
+                transition: .3s ease-in;
+            }
+        }
+    }
+}
+.ok-form-submit-regist{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 15px;
+    button{
+        padding: 14px 40px;
+        background: rgba(255, 179, 32, 0.55);
+        cursor: pointer;
+        &:hover{
+            background: rgba(255, 179, 32, 0.94);
+            transition: .3s ease-in;
+        }
+    }
+}
+.ok-show-password{
+    cursor: pointer;
+    color: #999999;
+    position: absolute;
+    content: "";
+    right: 10px;
+    bottom: 8px;
+    svg{
+        width: 30px;
+        height: 18px;
+        &:hover{
+            transition: .3s ease-in;
+            color: rgba(255, 179, 32, 0.94);
+        }
+    }
+}
+.ok-pass-form{
+    position: relative;
+}
+.ok-regist__item{
+
+    input{
+        
+        &:invalid{
+            border: 1px solid red;
+
+            
+        }
+        &:valid{
+            border: 1px solid green;
+        }
+    }
+}
+.ok-valid-img{
+    width: 30px;
+    height: 20px;
+    // position: absolute;
+    content: "";
+    color:#1DB305;
+    fill:#1DB305;
+}
+@media screen and (max-width: 639px){
+    .ok-form-text{
+        margin: 0;
+    }
+    .ok-regist{
+        padding: 0;
+        &__title{
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        &__subtitle{
+            margin-bottom: 30px;
+            color: #A9A8A8;
+            font-size: 0;
+            a{
+                font-size: 30px;
+                margin: 0;
+                color: #A9A8A8;
+            }
+        }
+    }
+    .ok-regist__block{
+        max-width: 100%;
+        padding: 33px 25px;
+    }
+}

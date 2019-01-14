@@ -223,7 +223,21 @@
         justify-content: space-around;
         
     }
+    .ok-menu-adatpive{
+        display: none;
+        transform: translateX(calc(-100% - 1000px));
+        transition: transform 0.4s ease-in-out;
+        position: absolute;
+        content: "";
+        background: #fff;
+        z-index: 999;
+        width: 100%;
+    }
     @media screen and (max-width: 639px){
+        .ok-menu-adatpive{
+            display: block;
+            
+        }
         .ok-menu-toggle{
             display: flex;
         }
@@ -242,24 +256,25 @@
     }
    
     .ok-menu-adatpive__list{
+        font-size: 16px;
+        font-family: 'Philosopher', sans-serif;
         li + li{
             margin-top: 30px;
         }
         margin: 0;
-        .upper{
-            text-transform: uppercase;
-        }
+       
         list-style: none;
         a{
             text-decoration: none;
             color: #110601;
+            border-bottom: 1px solid transparent;
+            &:hover{
+                border-bottom: 1px solid #110601;
+            }
 
         }
     }
-    .ok-menu-adatpive{
-        transform: translateX(calc(-100% - 1000px));
-        transition: transform 0.4s ease-in-out;
-    }
+    
 
     .ok-open{
         transform: translateX(0);
@@ -276,4 +291,11 @@
             transform: translateX(-200px);
         }
     
+    }
+    .upper{
+        li{
+            a{
+        text-transform: uppercase;
+            }
+    }
     }
