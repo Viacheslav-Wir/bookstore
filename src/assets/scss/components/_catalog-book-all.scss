@@ -1,0 +1,260 @@
+.ok-book-all-catalog__img{
+    transform-style: preserve-3d;
+    position: relative;
+    height: 250px;
+    cursor: pointer;
+    backface-visibility: visible;
+    transition: .3s ease-in-out;
+    
+}
+.ok-book-back, .ok-book-page6, .ok-book-page5,
+.ok-book-page4, .ok-book-page3, .ok-book-page2, .ok-book-page1,
+.ok-book-front{
+transform-style: preserve-3d;
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  top: 0; left: 0;
+  transform-origin: left center;
+  transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+}
+.ok-book-front, .ok-book-back{
+    // background-image: #ccc;
+    // background-size: cover;
+    -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+}
+
+.ok-book-page1{
+    background: #efefef;
+    
+    
+}
+.ok-book-page2{
+    background: #efefef;
+    
+   
+}
+.ok-book-page3{
+    background: #f5f5f5;
+    
+}
+.ok-book-page4{
+    background: #f5f5f5;
+   
+}
+.ok-book-page5{
+    p{
+        transform: scale(-1, 1);
+        font-size: 14px;
+        font-family: 'Philosopher', sans-serif;
+       }
+       padding: 10px 7px;
+    background: linear-gradient(left, rgba(209,209,209,1) 0%, rgba(254,254,254,1) 55%, rgba(254,254,254,1) 100%);
+  
+}
+.ok-book-page6{
+    background: #fdfdfd;
+    padding: 10px 7px;
+   p{
+       font-size: 14px;
+       font-family: 'Philosopher', sans-serif;
+   }
+    
+    background: linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 0%, rgba(209,209,209,1) 0%, rgba(254,254,254,1) 37%, rgba(254,254,254,1) 100%);
+    border-left: 1px solid rgba(0,0,0,0.5);
+}
+.ok-book-front, .ok-book-page1, .ok-book-page2, .ok-book-page3,
+.ok-book-page4, .ok-book-page5, .ok-book-page6, .ok-book-back{
+    border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  img{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+} 
+
+
+.ok-book-all-catalog__img{
+    
+    &:hover{
+        transform: translateX(50%);
+        transition: .3s ease-in-out;
+        @include breakpoint(medium){
+
+            transform: translateX(50%);
+            transition: .3s ease-in-out;
+        }
+        z-index: 111;
+        .ok-book-front{
+            transform: rotateY(-160deg) scale(1.1);
+           
+            
+        }
+        .ok-book-page1{
+            transform: rotateY(-150deg) scale(1.1);
+            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+            
+        }
+        .ok-book-page2{
+            transform: rotateY(-30deg) scale(1.1);
+            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+        }
+        .ok-book-page3{
+            transform: rotateY(-140deg) scale(1.1);
+            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+        }
+        .ok-book-page4{
+            transform: rotateY(-40deg) scale(1.1);
+            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+        }
+        .ok-book-page5{
+            transform: rotateY(-130deg) scale(1.1);
+            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+          
+           
+        }
+        .ok-book-page6{
+            transform: rotateY(-50deg) scale(1.1);
+            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+            
+        }
+        .ok-book-back{
+            transform: rotateY(-20deg) scale(1.1);
+        }
+    }
+}
+.ok-book-all-catalog{
+    text-align: left;
+   
+}
+.ok-block-info{
+    padding-left: 10px;
+}
+.ok-book-all-catalog__info{
+    font-family: 'Forum', cursive;
+    display: flex;   
+}
+.ok-block-btn{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+button{
+    
+    cursor: pointer;
+    &:hover{
+        
+        svg{
+            color: #F9D61C;
+            transition: .3s ease-in;
+        }
+    }
+    
+}
+button + button{
+    margin-top: 10px;
+}
+}
+.ok-book-title{
+    font-size: 18px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    
+}
+.ok-book-author{
+    font-size: 12px;
+    color: #7F7979;
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+.ok-book-price{
+    font-size: 24px;
+    color: #110601;
+    font-family: 'Philosopher', sans-serif;
+}
+.ok-catalog-title{
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    font-family: 'Philosopher', sans-serif;
+    margin-bottom: 56px;
+    &::before{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        width: 373px;
+        height: 1px;
+        left: calc(50% - 186px) ;
+        background: #110601;
+    }
+}
+.ok-main-catalog-title{
+    font-size: 24px;
+    font-family: 'Forum', cursive;
+}
+.ok-catalog-book{
+    padding-top: 100px;
+
+}
+.ok-select-page{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #110601;
+}
+.ok-select-up-down{
+    max-width: 180px;
+    margin-bottom: 0;
+    border: none;
+    background-image: url(../img/Select-arrow.png);
+    background-repeat: no-repeat;
+    font-family: 'Philosopher', sans-serif;
+
+    &:focus{
+        outline: none;
+        border: none;
+        box-shadow: none;
+    }
+}
+.ok-select-number-page{
+    display: flex;
+    align-items: center;
+   
+    a{
+        padding: 5px;
+        text-decoration: none;
+        color: #110601;
+        font-family: 'Philosopher', sans-serif;
+        font-size: 18px;
+        &:hover{
+            color: #F9D61C;
+        }
+    }
+    a + a{
+        margin-left: 5px;
+    }
+}
+.ok-how-much-item{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    color: #110601;
+}
+.margin-block{
+    margin-top: 100px;
+}

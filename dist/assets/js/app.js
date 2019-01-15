@@ -21662,7 +21662,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/wir/Beetroot/Front-end/teamwork/example/src/assets/js/app.js */"./src/assets/js/app.js");
+module.exports = __webpack_require__(/*! d:\Lessons\Bookstore\bookstore-3.0\bookstore\src\assets\js\app.js */"./src/assets/js/app.js");
 
 
 /***/ })
