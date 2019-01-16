@@ -1,7 +1,11 @@
 .hzh-politex{
     @include breakpoint(small){
-        // display: none;
+       display: none;
     }
+    @include breakpoint(medium large){
+        display: block;
+    }
+    
     background: url(../../../assets/img/politex.svg) 100% 100% no-repeat;
     background-size: 50%;
     margin-bottom: 95px;

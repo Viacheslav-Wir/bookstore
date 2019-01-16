@@ -57,9 +57,6 @@
         font-size: 30px;
 
         color: #110601;
-        &:hover{
-            color: #11060179;
-        }
     }
     a + ul{
         margin-bottom: 50px;
@@ -71,7 +68,12 @@
     li{
         list-style: none;
         margin-bottom: 16px;
-
+        @include breakpoint(medium large){
+            &:hover{
+                background: rgba(249, 214, 28, 0.35);
+                color: #11060179;
+            }
+        }
         a{
             font-family: $ubuntu-font-family;
             font-weight: 300;
