@@ -1,18 +1,15 @@
 import $ from 'jquery';
 
-// $(window).on('resize', function () {
-//     if($(window).width() <= 600){
-//         (function($) {
-//             $(function() {
-//                 $('a.tabs__caption').each(function() {
-//                     $(this).find('ul').each(function(i) {
-//                     $(this).click(function(){
-//                     $(this).addClass('active').siblings().removeClass('active')
-//                     .find('ul.tabs__content').removeClass('active').eq(i).addClass('active');
-//                     });
-//                     });
-//                     });
-//                 })
-//             })(jQuery)
-//     }
-// })
+$(window).resize(function() {
+    if ( $(window).width() < 500 ) {
+
+$(".tabs li a").on("click", function(e){
+  e.stopPropagation();
+  $(".tabs li, .tab").removeClass("current");
+  $(this).parent("a").addClass("current");
+  let href = $(this).attr("href");
+  $(".tab" + href).addClass("current");
+    return false;
+        });
+    }
+});

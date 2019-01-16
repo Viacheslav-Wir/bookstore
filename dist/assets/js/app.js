@@ -21591,22 +21591,19 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
- // $(window).on('resize', function () {
-//     if($(window).width() <= 600){
-//         (function($) {
-//             $(function() {
-//                 $('a.tabs__caption').each(function() {
-//                     $(this).find('ul').each(function(i) {
-//                     $(this).click(function(){
-//                     $(this).addClass('active').siblings().removeClass('active')
-//                     .find('ul.tabs__content').removeClass('active').eq(i).addClass('active');
-//                     });
-//                     });
-//                     });
-//                 })
-//             })(jQuery)
-//     }
-// })
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).resize(function () {
+  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() < 500) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".tabs li a").on("click", function (e) {
+      e.stopPropagation();
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".tabs li, .tab").removeClass("current");
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).parent("a").addClass("current");
+      var href = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr("href");
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".tab" + href).addClass("current");
+      return false;
+    });
+  }
+});
 
 /***/ }),
 
@@ -21662,7 +21659,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! d:\Lessons\Bookstore\bookstore-3.0\bookstore\src\assets\js\app.js */"./src/assets/js/app.js");
+module.exports = __webpack_require__(/*! d:\ba-comanda\bookstore\src\assets\js\app.js */"./src/assets/js/app.js");
 
 
 /***/ })
