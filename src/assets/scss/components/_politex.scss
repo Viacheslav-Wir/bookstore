@@ -1,0 +1,33 @@
+.hzh-politex{
+    @include breakpoint(small){
+        // display: none;
+    }
+    background: url(../../../assets/img/politex.svg) 100% 100% no-repeat;
+    background-size: 50%;
+    margin-bottom: 95px;
+    .hzh-politex__about{
+        max-width: 710px;
+        text-align: left;
+    }
+    cite{
+        font-family: $ubuntu-font-family;
+        font-style: italic;
+        font-weight: 300;
+        line-height: 25px;
+        font-size: 18px;
+        color: #110601;
+        max-width: 400px;
+        margin-left: 10%;
+        margin-bottom: 45px;
+    }
+}
+h6{
+    max-width: 670px;
+    margin-left: 10%;
+    font-family: $philosopher-font-family;
+    font-size: 64px;
+    color: #7F7979;
+
+    margin-bottom: 55px;
+
+}
