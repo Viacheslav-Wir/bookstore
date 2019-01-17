@@ -22833,6 +22833,11 @@ foundation_sites_js_foundation_core__WEBPACK_IMPORTED_MODULE_1__["Foundation"].p
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _lib_foundation_explicit_pieces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/foundation-explicit-pieces */ "./src/assets/js/lib/foundation-explicit-pieces.js");
+/* harmony import */ var slick_carousel_slick_slick_min_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! slick-carousel/slick/slick.min.js */ "./node_modules/slick-carousel/slick/slick.min.js");
+/* harmony import */ var slick_carousel_slick_slick_min_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(slick_carousel_slick_slick_min_js__WEBPACK_IMPORTED_MODULE_2__);
+
+
  // Menu header adaptive give class for section
 
 var menuTogle = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.ok-menu-toggle, .ok-menu-adatpive');
@@ -22848,6 +22853,27 @@ menuTogle.on('click', function () {
 var pass = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ok-show-pass__form');
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('button.ok-show-password').click(function () {
   pass.attr('type', pass.attr('type') === 'password' ? 'text' : 'password');
+});
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
+var newBooksSlider = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.ok-slider-block');
+newBooksSlider.slick({
+  // arrows: false,
+  dots: true,
+  prevArrow: ".ok-prev-arrow",
+  nextArrow: ".ok-next-arrow",
+  slidesToShow: 2,
+  // slidesPerRow: 2,
+  arrows: true,
+  slidesToScroll: 1,
+  slide: '.ok-item-slide',
+  responsive: [{
+    breakpoint: 900,
+    settings: {
+      slidesToShow: 1,
+      arrows: false // dots: false,
+
+    }
+  }]
 });
 
 /***/ }),
@@ -22887,7 +22913,7 @@ newBooksSlider.slick({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/wir/Beetroot/Front-end/teamwork/bookstore/src/assets/js/app.js */"./src/assets/js/app.js");
+module.exports = __webpack_require__(/*! d:\Lessons\Bookstore\bookstore-4.0\bookstore\src\assets\js\app.js */"./src/assets/js/app.js");
 
 
 /***/ })

@@ -29,8 +29,11 @@
 }
 }
 .ok-event-home{
-    
-    padding: 70px 0 100px;
+    overflow: hidden;
+    padding: 20px 0 20px;
+    @include breakpoint(medium){
+        padding: 70px 0 100px;
+    }
     font-family: 'Philosopher', sans-serif;
 
 
