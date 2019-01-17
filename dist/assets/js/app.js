@@ -22873,6 +22873,26 @@ newBooksSlider.slick({
 
     }
   }]
+}); // input type number for book change plus and minus
+
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  (function quantityProducts() {
+    var $quantityArrowMinus = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".ok-arrow-minus");
+    var $quantityArrowPlus = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".ok-arrow-plus");
+    var $quantityNum = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".ok-input-num");
+    $quantityArrowMinus.click(quantityMinus);
+    $quantityArrowPlus.click(quantityPlus);
+
+    function quantityMinus() {
+      if ($quantityNum.val() > 1) {
+        $quantityNum.val(+$quantityNum.val() - 1);
+      }
+    }
+
+    function quantityPlus() {
+      $quantityNum.val(+$quantityNum.val() + 1);
+    }
+  })();
 });
 
 /***/ }),
