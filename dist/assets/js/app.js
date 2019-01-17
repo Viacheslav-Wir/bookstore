@@ -22913,7 +22913,7 @@ newBooksSlider.slick({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! d:\Lessons\Bookstore\bookstore-4.0\bookstore\src\assets\js\app.js */"./src/assets/js/app.js");
+module.exports = __webpack_require__(/*! /home/wir/Beetroot/Front-end/teamwork/bookstore/src/assets/js/app.js */"./src/assets/js/app.js");
 
 
 /***/ })
