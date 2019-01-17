@@ -22974,6 +22974,11 @@ foundation_sites_js_foundation_core__WEBPACK_IMPORTED_MODULE_1__["Foundation"].p
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _lib_foundation_explicit_pieces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/foundation-explicit-pieces */ "./src/assets/js/lib/foundation-explicit-pieces.js");
+/* harmony import */ var slick_carousel_slick_slick_min_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! slick-carousel/slick/slick.min.js */ "./node_modules/slick-carousel/slick/slick.min.js");
+/* harmony import */ var slick_carousel_slick_slick_min_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(slick_carousel_slick_slick_min_js__WEBPACK_IMPORTED_MODULE_2__);
+
+
  // Menu header adaptive give class for section
 
 var menuTogle = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.ok-menu-toggle, .ok-menu-adatpive');
@@ -22990,6 +22995,27 @@ var pass = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#ok-show-pass__form');
 jquery__WEBPACK_IMPORTED_MODULE_0___default()('button.ok-show-password').click(function () {
   pass.attr('type', pass.attr('type') === 'password' ? 'text' : 'password');
 });
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
+var newBooksSlider = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.ok-slider-block');
+newBooksSlider.slick({
+  // arrows: false,
+  dots: true,
+  prevArrow: ".ok-prev-arrow",
+  nextArrow: ".ok-next-arrow",
+  slidesToShow: 2,
+  // slidesPerRow: 2,
+  arrows: true,
+  slidesToScroll: 1,
+  slide: '.ok-item-slide',
+  responsive: [{
+    breakpoint: 900,
+    settings: {
+      // slidesToShow: 1,
+      arrows: false // dots: false,
+
+    }
+  }]
+});
 
 /***/ }),
 
@@ -23004,20 +23030,45 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('button.ok-show-password').click(f
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _lib_foundation_explicit_pieces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/foundation-explicit-pieces */ "./src/assets/js/lib/foundation-explicit-pieces.js");
-/* harmony import */ var slick_carousel_slick_slick_min_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! slick-carousel/slick/slick.min.js */ "./node_modules/slick-carousel/slick/slick.min.js");
-/* harmony import */ var slick_carousel_slick_slick_min_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(slick_carousel_slick_slick_min_js__WEBPACK_IMPORTED_MODULE_2__);
+
+;
+
+(function () {
+  "use strict";
+
+  var xhr = new XMLHttpRequest();
+  var cartList = document.querySelector('.vo-cart-list'),
+      url_price_min = './data/price_all_min.json',
+      url_price_max = './data/price_all_max.json',
+      url_title_abc = './data/title_all_abc.json',
+      url_title_cba = './data/title_all_cba.json';
+  var cartTmpl = document.getElementById('product-cart').innerHTML,
+      cartListHTML = ''; // if (cartTmpl){
+  //     cartTmpl = cartTmpl.innerHTML;
+  // }
+
+  xhr.onload = function () {
+    var ajax = this;
+    var data = JSON.parse(ajax.response); // console.log('data',data)
+
+    data.forEach(function (element) {
+      // console.log(element.title)
+      // console.log(element.author)
+      // console.log(element.price)
+      if (element.price) {
+        cartListHTML += cartTmpl.replace(/--title--/ig, element.title).replace(/--author--/ig, element.author).replace(/--image--/ig, element.image).replace(/--price--/ig, element.price);
+      } else {
+        cartListHTML += cartTmpl.replace(/--title--/ig, element.title).replace(/--author--/ig, element.author).replace(/--image--/ig, element.image).replace(/--price-- грн/ig, '');
+      } // console.log('cartListHTML',cartListHTML)
 
 
+      cartList.innerHTML = cartListHTML;
+    });
+  };
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
-var newBooksSlider = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.vo-slider-block');
-newBooksSlider.slick({
-  // arrows: false,
-  dots: true,
-  slide: '.vo-slider-main',
-  appendDots: '.vo-slider-block__dots'
-});
+  xhr.open('GET', url_price_min);
+  xhr.send();
+})();
 
 /***/ }),
 

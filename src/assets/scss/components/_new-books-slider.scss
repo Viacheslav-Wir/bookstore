@@ -1,91 +1,197 @@
-.vo-new-books{
-    color: $main-text;
-    font-size: 14px;
-    font-weight: 300;
-    font-family: Ubuntu;
-    line-height: 24px;
-    h4{
-        font-family: Forum;
-        font-weight: normal;
-        font-size: 24px;
-        margin-bottom: 12px;
-        line-height: 29px;
+.ok-slide + .ok-slide{
+    margin-top: 30px;
+}
+.ok-slide{
+    
+    display: flex;
+  
+    &__info{
+        background: rgba(251, 255, 32, 0.15);
+        padding: 42px 38px 25px;
+        display: flex;
+        flex-direction: column;
+        
     }
-    h3{
-        font-family: Philosopher;
-        font-weight: normal;
-        font-size: 36px;
-    }
-    a{
-        color: $main-text;
+    &__img{
+        display: flex;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
         &:hover{
-            text-decoration: underline;
+            .ok-btn-book-mark{
+                transform: translateY(0);
+                transition: .2s ease-in;
+            }
+            .ok-btn-book-cart{
+                transform: translateY(0);
+                transition: .2s ease-in;
+            }
         }
-    }
-}
-.vo-new-card{
-    position: relative;
-    margin-bottom: 30px;
-}
-.vo-new-card-item{
-    display: flex;
-}
-.vo-new-img{
-    position: relative;
-    max-width: 245px;
-    min-width: 245px;
-    overflow: hidden;
-    &:hover{
-        .vo-favorite-block{
+        .ok-btn-book-mark{
+            cursor: pointer;
+            transition: .2s ease-in;
+            position: absolute;
+            padding: 25px;
             top: 0;
+            left: calc(50% - 50px);
+            background: rgba(255, 254, 254, 0.84);
+            transform: translateY(-100%);
+            &:hover{
+                background: rgba(255, 179, 32, 0.94);
+            }
         }
-        .vo-cart-block{
+        .ok-btn-book-cart{
+            cursor: pointer;
+            transition: .2s ease-in;
+            position: absolute;
+            padding: 25px;
             bottom: 0;
+            left: calc(50% - 50px);
+            background: rgba(255, 179, 32, 0.94);
+            transform: translateY(100%);
+            &:hover{
+                background: rgba(255, 179, 32, 0.64);
+            }
+            &:active{
+                background: rgba(255, 179, 32, 0.94);
+            }
+
+        }
+        svg{
+            width: 50px;
+            height: 50px;
+           
+        }
+        img{
+            width: 100%;
         }
     }
 }
-.vo-new-text{
-    padding: 60px 46px 25px 46px;
-    //background: rgba(251, 255, 32, 0.15);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.ok-slide-title{
+    font-size: 24px;
+    font-family: 'Forum', cursive;
+    color: #110601;
+    margin-bottom: 15px;
 }
-.vo-new-author{
-    color: #595857;
+.ok-slide-author{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    margin-bottom: 80px;
 }
-.vo-new-price{
-    font-family: Philosopher;
+.ok-slide-price{
     font-size: 36px;
-    font-weight: normal;
-    span{
-        font-size: 14px;
+    color: #110601;
+    font-family: 'Philosopher', sans-serif;
+}
+.slick-track{
+    .ok-item-slide{
+    
+        &:focus{
+    
+            outline: none;
+        }
     }
 }
-.vo-favorite-block{
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    background: rgba(255, 254, 254, 0.84);
-    width: 100px;
-    height: 90px;
-    position: absolute;
-    top: -90px;
-    left: 25%;
-    transition: 0.4s;
-    svg{
-        margin-top: 6px;
+.ok-bg-green{
+    background: rgba(187, 243, 189, 0.5);
+}
+.ok-bg-pink{
+    background: rgba(243, 193, 187, 0.5);
+}
+.ok-bg-orange{
+    background: rgba(255, 211, 170, 0.5);
+}
+.ok-slider-new-title{
+    font-size: 36px;
+    font-family: 'Philosopher', sans-serif;
+    color: #110601;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    padding-left: 70px;
+    &::before{
+        position: absolute;
+        content: "";
+        width: 412px;
+        height: 1px;
+        background: #110601;
+        bottom: 0;
+        left: 0;
     }
 }
-.vo-cart-block{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 179, 32, 0.7);
-    width: 100px;
-    height: 90px;
-    position: absolute;
-    bottom: -90px;
-    left: 25%;
-    transition: 0.4s;
+.ba-item-slides{
+    position: relative;
+    .ok-prev-arrow{
+        position: absolute;
+            top: 45%;
+            left: -35px;
+            cursor: pointer;
+            content: "";
+        svg{
+            transition: .3s ease-in;
+            width: 30px;
+            height: 60px;
+            
+            color: #7F7979;
+            &:hover{
+                color: rgba(255, 179, 32, 0.94);
+            }
+        }
+    }
+    .ok-next-arrow{
+        cursor: pointer;
+        position: absolute;
+        top: 45%;
+        right: -35px;
+        content: "";
+        svg{
+            transition: .3s ease-in;
+            width: 30px;
+            height: 60px;
+            &:hover{
+                color: rgba(255, 179, 32, 0.94);
+            }
+            color: #7F7979;
+        }
+    }
+    .slick-dots{
+        cursor: pointer;
+        padding-top: 30px;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        .slick-active{
+            transition: .3s ease-in;
+            background: rgba(255, 179, 32, 0.94);
+        }
+        li{
+            background: #DFDFDF;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            font-size: 0;
+        }
+        li + li{
+            margin-left: 16px;
+        }
+    }
+}
+.ok-slider-section{
+    padding: 30px 0 30px;
+    overflow: hidden;
+    @include breakpoint(medium){
+        padding: 100px 0 100px;
+    }
+}
+@media screen and (max-width: 900px){
+    .ok-slide__info{
+        display: none;
+    }
+    .ok-next-arrow{
+        display: none;
+    }
+    .ok-prev-arrow{
+        display: none;
+    }
 }
