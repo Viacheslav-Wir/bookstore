@@ -1,0 +1,92 @@
+#hzh-map{
+    display: none;
+    @include breakpoint(medium large){
+        display: block;
+    }
+}
+.hzh-bookstore{
+    &__location{
+        display: block;
+        @include breakpoint(medium large){
+            display: flex;
+            margin-bottom: 95px;
+            &:nth-child(odd){
+                justify-content: flex-end;
+            }      
+        }
+        align-items: center;
+        
+        img{
+            @include breakpoint(medium large){
+                width: 50%;
+            }
+            width: 100%;
+        }
+        &--adress{
+            max-width: 250px;
+            & + img{
+                margin-left: 30px;
+            }
+            img + &{
+                margin-left: 30px;
+            }
+            span{
+                font-family: $forum-font-family;
+                line-height: 29px;
+                font-size: 24px;
+                color: #000000;
+            }
+            p{
+                font-family: $ubuntu-font-family;
+                font-weight: 300;
+                line-height: 22px;
+                font-size: 16px;
+                color: #000000;
+                margin-top: 20px;
+            }
+        }
+    }
+    &__about{
+        max-width: 565px;
+        margin-left: 20%;
+        font-family: $forum-font-family;
+        font-size: 20px;
+        margin-bottom: 50px;
+        @include breakpoint(medium large){
+            font-size: 30px; 
+            margin-bottom: 125px;  
+        }
+        color: #110601;
+        &::after{
+            @include breakpoint(large medium){
+                width:30%;
+            }
+            position: absolute;
+            content: " ";
+            border: 0.5px solid #110601;
+            display:table-cell;
+            width:50%;
+        }
+    }
+}
+.hzh-bookstore-logos{
+    margin-left: 0;
+    @include breakpoint(medium large){
+        max-width: 770px;
+        margin-left: 20%;
+    }
+    margin-bottom: 50px;
+    @include breakpoint(medium large){
+        margin-bottom: 100px;
+    }
+    div{
+        margin-bottom: 50px;
+        @include breakpoint(medium large){
+            margin-bottom: 70px; 
+        }
+    }
+    .hzh-bookstore-logo{
+        display: flex;
+        justify-content: space-between;       
+    }
+}
