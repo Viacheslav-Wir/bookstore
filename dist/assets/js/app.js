@@ -22869,7 +22869,6 @@ newBooksSlider.slick({
   responsive: [{
     breakpoint: 900,
     settings: {
-      slidesToShow: 1,
       arrows: false // dots: false,
 
     }
