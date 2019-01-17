@@ -7,11 +7,19 @@ import 'what-input';
 // This is why we have to use CommonJS require() here since it doesn't
 // have the hoisting behavior.
 window.jQuery = $;
-require('foundation-sites');
+// require('foundation-sites');
 
 // If you want to pick and choose which modules to include, comment out the above and uncomment
 // the line below
-//import './lib/foundation-explicit-pieces';
-
+import './lib/foundation-explicit-pieces';
+import slick from 'slick-carousel/slick/slick.min.js';
 
 $(document).foundation();
+
+let newBooksSlider = $('.vo-slider-block');
+newBooksSlider.slick({
+    // arrows: false,
+    dots: true,
+    slide: '.vo-slider-main',
+    appendDots: '.vo-slider-block__dots'
+});
