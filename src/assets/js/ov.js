@@ -5,10 +5,10 @@ import $ from 'jquery';
 
     const xhr = new XMLHttpRequest();
     const cartList = document.querySelector('.vo-cart-list'),
-          url_price_min = './data/price_all_min.json',
-          url_price_max= './data/price_all_max.json',
-          url_title_abc = './data/title_all_abc.json',
-          url_title_cba = './data/title_all_cba.json';
+          url_price_min = '../assets/data/price_all_min.json',
+          url_price_max= '{{root}}assets/price_all_max.json',
+          url_title_abc = '{{root}}assets/title_all_abc.json',
+          url_title_cba = '{{root}}assets/title_all_cba.json';
 
     let cartTmpl = document.getElementById('product-cart').innerHTML,
         cartListHTML = '';
