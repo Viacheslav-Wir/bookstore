@@ -48,3 +48,27 @@ newBooksSlider.slick({
         },   
   ]
 });
+
+// input type number for book change plus and minus
+$(function() {
+
+  (function quantityProducts() {
+    let $quantityArrowMinus = $(".ok-arrow-minus");
+    let $quantityArrowPlus = $(".ok-arrow-plus");
+    let $quantityNum = $(".ok-input-num");
+
+    $quantityArrowMinus.click(quantityMinus);
+    $quantityArrowPlus.click(quantityPlus);
+
+    function quantityMinus() {
+      if ($quantityNum.val() > 1) {
+        $quantityNum.val(+$quantityNum.val() - 1);
+      }
+    }
+
+    function quantityPlus() {
+      $quantityNum.val(+$quantityNum.val() + 1);
+    }
+  })();
+
+});

@@ -6220,6 +6220,257 @@ input[type=number]::-webkit-outer-spin-button {
 .margin-block {
   margin-top: 100px; }
 
+.ok-block-adaptive-product {
+  display: none; }
+  @media print, screen and (min-width: 40em) {
+    .ok-block-adaptive-product {
+      display: block; } }
+
+.ok-single-product {
+  padding: 30px 0 30px;
+  overflow: hidden; }
+  @media print, screen and (min-width: 40em) {
+    .ok-single-product {
+      padding: 100px 0 50px; } }
+  .ok-single-product__img {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    @media print, screen and (min-width: 40em) {
+      .ok-single-product__img {
+        display: block; } }
+    .ok-single-product__img img {
+      width: 100%; }
+  .ok-single-product .ok-single-product__title {
+    font-size: 24px;
+    font-family: 'Forum', cursive;
+    color: #110601;
+    margin-bottom: 0;
+    border-bottom: 1px solid #110601; }
+    @media print, screen and (min-width: 40em) {
+      .ok-single-product .ok-single-product__title {
+        font-size: 30px;
+        margin-bottom: 15px; } }
+  .ok-single-product__info-book {
+    margin-top: 15px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    @media print, screen and (min-width: 40em) {
+      .ok-single-product__info-book {
+        margin-top: 30px; } }
+    .ok-single-product__info-book p {
+      max-width: 175px;
+      font-size: 12px;
+      line-height: 2;
+      font-family: 'Ubuntu', sans-serif;
+      color: #7F7979; }
+      @media print, screen and (min-width: 40em) {
+        .ok-single-product__info-book p {
+          font-size: 14px;
+          line-height: 2.2; } }
+
+.ok-single-product__comment-btn {
+  font-size: 0; }
+  @media print, screen and (min-width: 40em) {
+    .ok-single-product__comment-btn {
+      margin-left: 80px; } }
+  .ok-single-product__comment-btn svg {
+    width: 30px;
+    height: 30px;
+    margin-right: 7px; }
+  .ok-single-product__comment-btn a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    text-decoration: none;
+    color: #110601;
+    margin-bottom: 10px; }
+    .ok-single-product__comment-btn a:hover {
+      color: rgba(255, 179, 32, 0.94); }
+  .ok-single-product__comment-btn button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .ok-single-product__comment-btn button:hover {
+      -webkit-transition: .3s ease-in;
+      transition: .3s ease-in;
+      color: rgba(255, 179, 32, 0.94); }
+
+.ok-single-product__price {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 25px; }
+  @media print, screen and (min-width: 40em) {
+    .ok-single-product__price {
+      font-size: 36px;
+      margin-bottom: 30px;
+      margin-top: 0;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; } }
+  .ok-single-product__price svg {
+    margin-right: 25px;
+    width: 30px;
+    height: 30px; }
+    @media print, screen and (min-width: 40em) {
+      .ok-single-product__price svg {
+        margin-right: 55px; } }
+
+.ok-single-product__subtitle {
+  font-size: 14px;
+  color: #7F7979;
+  font-family: 'Forum', cursive; }
+  @media print, screen and (min-width: 40em) {
+    .ok-single-product__subtitle {
+      font-size: 24px; } }
+
+.ok-single-product__btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  @media print, screen and (min-width: 40em) {
+    .ok-single-product__btn {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+
+.ok-input-nubmer {
+  border-bottom: 1px solid #110601;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 0;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 24px; }
+  @media print, screen and (min-width: 40em) {
+    .ok-input-nubmer {
+      margin-left: 30px; } }
+  .ok-input-nubmer button {
+    cursor: pointer; }
+    .ok-input-nubmer button:hover {
+      color: rgba(255, 179, 32, 0.94);
+      -webkit-transition: .3s ease-in;
+      transition: .3s ease-in; }
+  .ok-input-nubmer input {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-family: 'Philosopher', sans-serif;
+    max-width: 150px;
+    border: none; }
+    .ok-input-nubmer input:focus {
+      outline: none; }
+
+.ok-btn-to-cart {
+  font-family: 'Philosopher', sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  background: rgba(255, 179, 32, 0.94);
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
+  cursor: pointer; }
+  @media print, screen and (min-width: 40em) {
+    .ok-btn-to-cart {
+      padding: 14px 30px;
+      font-size: 18px;
+      margin-bottom: 0; } }
+  .ok-btn-to-cart:hover {
+    outline: none;
+    background: rgba(255, 179, 32, 0.94);
+    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-transition: .3s ease-in;
+    transition: .3s ease-in; }
+  .ok-btn-to-cart:active {
+    background: rgba(255, 179, 32, 0.94);
+    -webkit-transition: .3s ease-in;
+    transition: .3s ease-in; }
+
+.ok-arrow-plus {
+  margin-left: 20px; }
+
+.ok-arrow-minus {
+  margin-right: 20px; }
+
+.ok-single-product__author {
+  font-size: 14px;
+  color: #7F7979;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300; }
+
+.text-info-book p {
+  font-size: 16px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #110601;
+  font-weight: 300; }
+
+@media print, screen and (min-width: 40em) {
+  .padding-left-block {
+    margin-top: 15px;
+    padding-left: 0; } }
+
+.block-title-adaptive {
+  padding: 0 10px 0;
+  display: block;
+  margin-bottom: 10px; }
+  @media print, screen and (min-width: 40em) {
+    .block-title-adaptive {
+      display: none; } }
+
+.ok-block-drop-menu {
+  padding-top: 15px;
+  font-size: 16px;
+  color: #110601; }
+  @media print, screen and (min-width: 40em) {
+    .ok-block-drop-menu {
+      padding-top: 65px; } }
+  .ok-block-drop-menu span {
+    border-bottom: 1px solid rgba(255, 179, 32, 0.94);
+    padding-bottom: 8px; }
+
+.drop-menu-info a {
+  border-bottom: 1px solid rgba(255, 179, 32, 0.94);
+  padding-right: 0;
+  color: #110601; }
+  .drop-menu-info a:after {
+    left: 0; }
+
 .hzh-search {
   font-family: "Ubuntu", sans-serif;
   padding-top: 49px;
