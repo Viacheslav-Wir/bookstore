@@ -6691,7 +6691,7 @@ h2 {
 
 .hzh-politex {
   display: none;
-  background: url(../../../assets/img/politex.svg) 100% 100% no-repeat;
+  background: url("../../../assets/img/не-politex.svg") 100% 100% no-repeat;
   background-size: 50%;
   margin-bottom: 95px; }
   @media screen and (min-width: 40em) {
@@ -6718,6 +6718,198 @@ h6 {
   font-size: 64px;
   color: #7F7979;
   margin-bottom: 55px; }
+
+.hzh-contacts__desc {
+  font-family: "Forum", cursive;
+  font-size: 30px;
+  color: #110601;
+  margin-bottom: 70px; }
+
+.hzh-contacts {
+  margin-top: 75px; }
+  .hzh-contacts h5 {
+    font-family: "Philosopher", sans-serif;
+    font-size: 36px;
+    color: #110601; }
+
+.hzh-contacts__department {
+  max-width: 600px;
+  margin-bottom: 75px; }
+  .hzh-contacts__department--title {
+    font-family: Forum;
+    line-height: 29px;
+    font-size: 24px;
+    color: #000000;
+    margin-left: 5%; }
+    .hzh-contacts__department--title::after {
+      position: absolute;
+      content: " ";
+      border: 0.5px solid #110601;
+      display: table-cell;
+      text-align: center;
+      width: 60%;
+      margin: 0 auto;
+      overflow: hidden; }
+  .hzh-contacts__department--info {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .hzh-contacts__department--info-name {
+    font-family: "Forum", cursive;
+    line-height: 22px;
+    font-size: 18px;
+    color: #000000;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+    .hzh-contacts__department--info-name p {
+      margin-bottom: 0; }
+    .hzh-contacts__department--info-name p + p {
+      margin-top: 10px; }
+    .hzh-contacts__department--info-name span {
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 300;
+      line-height: 19px;
+      font-size: 14px;
+      color: #999999; }
+    .hzh-contacts__department--info-name span + p {
+      margin-top: 40px; }
+  .hzh-contacts__department--info-contact {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+    .hzh-contacts__department--info-contact a {
+      text-decoration: none;
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 300;
+      line-height: 22px;
+      font-size: 16px;
+      color: #000000; }
+      .hzh-contacts__department--info-contact a:hover {
+        text-decoration: underline; }
+    .hzh-contacts__department--info-contact a + a {
+      margin-top: 20px; }
+
+#hzh-map {
+  width: 100%;
+  height: 600px;
+  margin-bottom: 100px;
+  position: relative;
+  z-index: 0; }
+
+#hzh-map {
+  display: none; }
+  @media screen and (min-width: 40em) {
+    #hzh-map {
+      display: block; } }
+
+.hzh-bookstore__location {
+  display: block;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  @media screen and (min-width: 40em) {
+    .hzh-bookstore__location {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      margin-bottom: 95px; }
+      .hzh-bookstore__location:nth-child(odd) {
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
+                justify-content: flex-end; } }
+  .hzh-bookstore__location img {
+    width: 100%; }
+    @media screen and (min-width: 40em) {
+      .hzh-bookstore__location img {
+        width: 50%; } }
+  .hzh-bookstore__location--adress {
+    max-width: 250px; }
+    .hzh-bookstore__location--adress + img {
+      margin-left: 30px; }
+    img + .hzh-bookstore__location--adress {
+      margin-left: 30px; }
+    .hzh-bookstore__location--adress span {
+      font-family: "Forum", cursive;
+      line-height: 29px;
+      font-size: 24px;
+      color: #000000; }
+    .hzh-bookstore__location--adress p {
+      font-family: "Ubuntu", sans-serif;
+      font-weight: 300;
+      line-height: 22px;
+      font-size: 16px;
+      color: #000000;
+      margin-top: 20px; }
+
+.hzh-bookstore__about {
+  max-width: 565px;
+  margin-left: 20%;
+  font-family: "Forum", cursive;
+  font-size: 20px;
+  margin-bottom: 50px;
+  color: #110601; }
+  @media screen and (min-width: 40em) {
+    .hzh-bookstore__about {
+      font-size: 30px;
+      margin-bottom: 125px; } }
+  .hzh-bookstore__about::after {
+    position: absolute;
+    content: " ";
+    border: 0.5px solid #110601;
+    display: table-cell;
+    width: 50%; }
+    @media screen and (min-width: 64em) {
+      .hzh-bookstore__about::after {
+        width: 30%; } }
+
+.hzh-bookstore-logos {
+  margin-left: 0;
+  margin-bottom: 50px; }
+  @media screen and (min-width: 40em) {
+    .hzh-bookstore-logos {
+      max-width: 770px;
+      margin-left: 20%; } }
+  @media screen and (min-width: 40em) {
+    .hzh-bookstore-logos {
+      margin-bottom: 100px; } }
+  .hzh-bookstore-logos div {
+    margin-bottom: 50px; }
+    @media screen and (min-width: 40em) {
+      .hzh-bookstore-logos div {
+        margin-bottom: 70px; } }
+  .hzh-bookstore-logos .hzh-bookstore-logo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
 
 .vo-footer-border {
   height: 11px;
