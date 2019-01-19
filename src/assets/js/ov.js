@@ -4,9 +4,9 @@ import $ from 'jquery';
     "use strict";
 
     const url_price_min = '../assets/data/price_all_min.json',
-          url_price_max= '{{root}}assets/price_all_max.json',
-          url_title_abc = '{{root}}assets/title_all_abc.json',
-          url_title_cba = '{{root}}assets/title_all_cba.json';
+          url_price_max= '../assets/data/price_all_max.json',
+          url_title_abc = '../assets/data/title_all_abc.json',
+          url_title_cba = '../assets/data/title_all_cba.json';
 
     function generateCatalogPagesData(sortType, url){
         const xhr = new XMLHttpRequest();
@@ -56,5 +56,8 @@ import $ from 'jquery';
     }
 
     generateCatalogPagesData('price_min', url_price_min);
+    generateCatalogPagesData('price_max', url_price_max);
+    generateCatalogPagesData('title_abc', url_title_abc);
+    generateCatalogPagesData('title_cba', url_title_cba);
 
 })();
