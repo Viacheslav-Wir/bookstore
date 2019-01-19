@@ -13,15 +13,10 @@
                     <option value="price-up">зростанням ціни</option>
                 </select>
                 <div class="ok-select-number-page">
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
+                    <span onclick="bookForCatalog(1)">1</span>
+                    <span onclick="bookForCatalog(2)">2</span>
+                    <span onclick="bookForCatalog(3)">3</span>
+                    <span onclick="bookForCatalog(4)">4</span>
                 </div>
                 <!-- /.ok-select-number-page -->
             </div>
@@ -35,18 +30,20 @@
         <script type="text/template" id="product-cart">
             <div class="column small-12 medium-6 large-3">
                 <div class="ok-book-all-catalog">
-                    <div class="ok-book-all-catalog__img">
-                            <div class="ok-book-back"><img src="{{root}}assets/img/--image--" alt="book"></div>
-                            <div class="ok-book-page6"><p>Усіх цих та ще багатьох інших умінь навчає наука, яка
-                                    впевнено утверджується в сучасній системі української освіти, – риторика. </p></div>
-                            <div class="ok-book-page5"><p>Кожна людина зацікавлена в тому, щоб уміти правильно і гарно розмовляти з колегами, друзями, рідними; коректно і переконливо вести дискусію; цікаво і розумно будувати свій виступ перед широкою аудиторією</p></div>
-                            <div class="ok-book-page4"></div>
-                            <div class="ok-book-page3"></div>
-                            <div class="ok-book-page2"></div>
-                            <div class="ok-book-page1"></div>
-                            <div class="ok-book-front"><img src="{{root}}assets/img/--image--" alt="book"></div>
-                    </div>
-                    <div class="ok-book-all-catalog__info">
+                    <a href="../single-product.html" >
+                        <div class="ok-book-all-catalog__img">
+                                <div class="ok-book-back"><img src="{{root}}assets/img/--image--" alt="book"></div>
+                                <div class="ok-book-page6"><p>Усіх цих та ще багатьох інших умінь навчає наука, яка
+                                        впевнено утверджується в сучасній системі української освіти, – риторика. </p></div>
+                                <div class="ok-book-page5"><p>Кожна людина зацікавлена в тому, щоб уміти правильно і гарно розмовляти з колегами, друзями, рідними; коректно і переконливо вести дискусію; цікаво і розумно будувати свій виступ перед широкою аудиторією</p></div>
+                                <div class="ok-book-page4"></div>
+                                <div class="ok-book-page3"></div>
+                                <div class="ok-book-page2"></div>
+                                <div class="ok-book-page1"></div>
+                                <div class="ok-book-front"><img src="{{root}}assets/img/--image--" alt="book"></div>
+                        </div>
+                    </a>
+                    <div class="ok-book-all-catalog__info" onclick="clickOnProduct(--product-id--)">
                         <div class="ok-block-btn">
                             <button class="ok-btn-bookmark"><svg width=30 height=30><use xlink:href="#ok-book-mark" /></svg></button>
                             <button class="ok-btn-cart"><svg width=30 height=30><use xlink:href="#ok-shoping-cart" /></svg></button>
@@ -71,15 +68,10 @@
             <div class="ok-select-page">
                <span class="ok-how-much-item">показано 20 результатів з 983</span>
                 <div class="ok-select-number-page">
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
+                    <span onclick="bookForCatalog(5)">1</span>
+                    <span onclick="bookForCatalog(6)">2</span>
+                    <span onclick="bookForCatalog(7)">3</span>
+                    <span onclick="bookForCatalog(8)">4</span>
                 </div>
                 <!-- /.ok-select-number-page -->
             </div>
@@ -87,6 +79,49 @@
         </div>
         <!-- /.small-10 -->
     </div>
-   
+   <script>
+        function clickOnProduct (idProduct) {
+            const xhr = new XMLHttpRequest();
+            const url_ = '../assets/data/price_all_min.json';
+            
+            xhr.onload = function (){
+                let ajax = this;
+                const data = JSON.parse(ajax.response);
+                let elementToString = '';
+
+                data.forEach( function(el) {
+                    if (el.id == idProduct){
+                        for (var key in el) {
+                            if (el[key]){
+                                elementToString += key + ":" + el[key] + "|"
+                            }
+                        }
+                        localStorage.setItem('productSingle', elementToString);
+                    }
+                });
+
+            };
+            xhr.open('GET', url_);
+            xhr.send();
+        }
+
+        function bookForCatalog (page_number) {
+            const cartList = document.querySelector('.vo-cart-list');
+
+            if (page_number == 1 | page_number == 5){
+                cartList.innerHTML = '';
+                cartList.innerHTML = localStorage.getItem("price_min20");
+            } else if (page_number == 2 | page_number == 6) {
+                cartList.innerHTML = '';
+                cartList.innerHTML = localStorage.getItem("price_min40");
+            } else if (page_number == 3 | page_number == 7) {
+                cartList.innerHTML = '';
+                cartList.innerHTML = localStorage.getItem("60");
+            } else if (page_number == 4 | page_number == 8){
+                cartList.innerHTML = '';
+                cartList.innerHTML = localStorage.getItem("80");
+            }
+       }
+   </script>
 </section>
 <!-- /.ok-catalog-book -->
