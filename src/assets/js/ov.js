@@ -55,9 +55,27 @@ import $ from 'jquery';
         xhr.send();
     }
 
-    generateCatalogPagesData('price_min', url_price_min);
-    generateCatalogPagesData('price_max', url_price_max);
-    generateCatalogPagesData('title_abc', url_title_abc);
-    generateCatalogPagesData('title_cba', url_title_cba);
+    if(document.getElementById('product-cart')){
+        generateCatalogPagesData('price_min', url_price_min);
+        generateCatalogPagesData('price_max', url_price_max);
+        generateCatalogPagesData('title_abc', url_title_abc);
+        generateCatalogPagesData('title_cba', url_title_cba);
+    }
+
+    function addToBasket (idProduct) {
+        const xhr = new XMLHttpRequest();
+        const url = '../assets/data/all_by_id';
+
+        xhr.onload = function (){
+            let ajax = this;
+            const data = JSON.parse(ajax.response);
+
+            console.log(data[idProduct])
+        };
+
+        xhr.open('GET', url);
+        xhr.send();
+    }
 
 })();
+
