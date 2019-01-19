@@ -1,7 +1,7 @@
 <section class="ok-single-product">
     <div class="row block-title-adaptive">
-            <h3 class="ok-single-product__title">Управління дорожнім рухом на регульованих перехрестях у містах</h3>
-            <span class="ok-single-product__subtitle">За заг. ред. проф. Є. Ю. Форнальчика</span>
+        <h3 class="ok-single-product__title">Управління дорожнім рухом на регульованих перехрестях у містах</h3>
+        <span class="ok-single-product__subtitle">За заг. ред. проф. Є. Ю. Форнальчика</span>
     </div>
     <div class="row align-justify">
         <div class="column small-6 medium-6 large-4">
@@ -91,5 +91,135 @@
         <!-- /.column small-12 medium-6 -->
     </div>
     <!-- /.row -->
+
+    <div class="row vo-product-single"></div>
+    <script type="text/template" id="product-single">
+        <div class="row block-title-adaptive">
+            <h3 class="ok-single-product__title">--title--</h3>
+            <span class="ok-single-product__subtitle">--author--</span>
+        </div>
+        <div class="row align-justify">
+            <div class="column small-6 medium-6 large-4">
+                <div class="ok-single-product__img">
+                    <img src="{{root}}assets/img/--image--" alt="book">
+                </div>
+                <!-- /.ok-single-product__img -->
+            </div>
+            <!-- /.column small-4 -->
+            <div class="column small-6">
+                <div class="ok-single-product__info">
+                    <div class="ok-block-adaptive-product">
+                    <h3 class="ok-single-product__title">--title--</h3>
+                    <span class="ok-single-product__subtitle">--author--</span>
+                </div>
+                <!-- /.ok-block-adaptive-product -->
+                    <div class="ok-single-product__info-book">
+                        <p>--isbn-- --pages-- --cover-- --year-- --format--</p>
+                        <div class="ok-single-product__comment-btn">
+                            <a href="#"><svg>
+                                    <use xlink:href="#ok-comment" /></svg>коментувати</a>
+                            <button href="#"><svg>
+                                    <use xlink:href="#ok-book-mark" /></svg>додати до закладок</button>
+                        </div>
+                        <!-- /.ok-single-product__comment -->
+                    </div>
+                    <!-- /.ok-single-product__btn -->
+                    <span class="ok-single-product__price"><svg>
+                            <use xlink:href="#ok-shoping-cart" /></svg>--price-- грн</span>
+                    <div class="ok-single-product__btn">
+                        <button class="ok-btn-to-cart" type="submit">покласти у кошик</button>
+                        <div class="ok-input-nubmer">
+                            <button class="ok-arrow-minus">- </button>
+                            <input class="ok-input-num" type="number" min="1" max="10" value="1">
+                            <button class="ok-arrow-plus"> +</button>
+                        </div>
+                        <!-- /.ok-btn-nubme -->
+
+                    </div>
+                    <!-- /.ok-single-product__btn -->
+                </div>
+                <!-- /.ok-single-product__info -->
+            </div>
+            <!-- /.colomn small-6 -->
+        </div>
+        <div class="row align-justify">
+            <div class="column small-12 medium-6 large-4">
+                <div class="ok-block-drop-menu">
+                <span class="ok-book-info">Повний текст монографії</span>
+                <ul class="vertical menu accordion-menu drop-menu-info" data-accordion-menu>
+                        <li>
+                          <a href="#">Приладо-, машинобудування, транспорт</a>
+                          <ul class="menu vertical nested">
+                            <li><a href="#">Item 1A</a></li>
+                            <li><a href="#">Item 1B</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Монографії</a>
+                        <ul class="menu vertical nested">
+                            <li><a href="#">Item 1A</a></li>
+                            <li><a href="#">Item 1B</a></li>
+                          </ul></li>
+                      </ul>
+            </div>
+            <!-- /.ok-block-drop-menu -->
+            </div>
+            <!-- /.column small-3 -->
+            <div class="column small-12 medium-6 padding-left-block">
+                <div class="text-info-book">
+                    <span class="ok-single-product__author">--short-info--, --year--. --pages-- --format-- --cover--.</span>
+                    --description--
+                </div>
+                <!-- /.text-info-book -->
+            </div>
+            <!-- /.column small-12 medium-6 -->
+        </div>
+        <!-- /.row -->
+    </script>
+    <script>
+        const productTmpl = document.getElementById('product-single').innerHTML;
+        const productSingle = document.querySelector('.vo-product-single');
+        let productSingleHTML = '';
+        let tempList = localStorage.getItem("productSingle").split('|');
+        let productData = {};
+
+        tempList.forEach( function(el) {
+            let temp = el.split(':');
+            let key = temp[0];
+            let value = temp[1];
+
+            productData[key] = value;
+        });
+
+        if (productData.price){
+            productSingleHTML += productTmpl
+            .replace(/--title--/ig, productData.title)
+            .replace(/--author--/ig, productData.author)
+            .replace(/--image--/ig, productData.imageBig)
+            .replace(/--description--/ig, productData.description)
+            .replace(/--short-info--/ig, productData.short_info)
+            .replace(/--year--/ig, productData.published)
+            .replace(/--pages--/ig, productData.pages)
+            .replace(/--format--/ig, productData.format)
+            .replace(/--cover--/ig, productData.cover)
+            .replace(/--isbn--/ig, productData.isbn)
+            .replace(/--author--/ig, productData.author)
+            .replace(/--price--/ig, productData.price);
+        } else{
+            productSingleHTML += productTmpl
+            .replace(/--title--/ig, productData.title)
+            .replace(/--author--/ig, productData.author)
+            .replace(/--image--/ig, productData.imageBig)
+            .replace(/--description--/ig, productData.description)
+            .replace(/--short-info--/ig, productData.short_info)
+            .replace(/--year--/ig, productData.published)
+            .replace(/--pages--/ig, productData.pages)
+            .replace(/--format--/ig, productData.format)
+            .replace(/--cover--/ig, productData.cover)
+            .replace(/--isbn--/ig, productData.isbn)
+            .replace(/--author--/ig, productData.author)
+            .replace(/--price-- грн/ig, '');
+        }
+        productSingle.innerHTML = productSingleHTML;    
+    </script>
 </section>
 <!-- /.ok-single-product -->

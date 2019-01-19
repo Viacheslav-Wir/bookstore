@@ -1,2 +1,17 @@
 @import "components/footer";
 @import "components/new-books-slider";
+
+.ok-select-number-page span + span{
+    margin-left: 5px;
+}
+.ok-select-number-page span{
+    padding: 5px;
+    text-decoration: none;
+    color: #110601;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 18px;
+}
+.ok-select-number-page span:hover{
+    cursor: pointer;
+    color: #F9D61C;
+}
