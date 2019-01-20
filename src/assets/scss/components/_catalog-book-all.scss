@@ -18,13 +18,7 @@ transform-style: preserve-3d;
   transform-origin: left center;
   transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
 }
-.ok-book-front, .ok-book-back{
-    // background-image: #ccc;
-    // background-size: cover;
-    -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
--moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
-}
+
 
 .ok-book-page1{
     background: #efefef;
@@ -35,6 +29,13 @@ box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
     background: #efefef;
     
    
+}
+.ok-book-front, .ok-book-back{
+    // background-image: #ccc;
+    // background-size: cover;
+    -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
 }
 .ok-book-page3{
     background: #f5f5f5;
@@ -77,7 +78,9 @@ box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
 
 
 .ok-book-all-catalog__img{
-    
+
+    margin: 0 auto;
+    max-width: 180px;
     &:hover{
         transform: translateX(50%);
         transition: .3s ease-in-out;
@@ -94,42 +97,42 @@ box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
         }
         .ok-book-page1{
             transform: rotateY(-150deg) scale(1.1);
-            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
--moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
             
         }
         .ok-book-page2{
             transform: rotateY(-30deg) scale(1.1);
-            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
--moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
         }
         .ok-book-page3{
             transform: rotateY(-140deg) scale(1.1);
-            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
--moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
         }
         .ok-book-page4{
             transform: rotateY(-40deg) scale(1.1);
-            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
--moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
         }
         .ok-book-page5{
             transform: rotateY(-130deg) scale(1.1);
-            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
--moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
           
            
         }
         .ok-book-page6{
             transform: rotateY(-50deg) scale(1.1);
-            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
--moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
+            -webkit-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+-moz-box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
+box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.2);
             
         }
         .ok-book-back{
@@ -141,12 +144,15 @@ box-shadow: 5px 5px 8px 1px rgba(0,0,0,0.54);
     text-align: left;
    
 }
-.ok-block-info{
-    padding-left: 10px;
-}
+
 .ok-book-all-catalog__info{
+    max-width: 225px;
+    margin: 0 auto;
     font-family: 'Forum', cursive;
     display: flex;   
+}
+.ok-block-info{
+    padding-left: 10px;
 }
 .ok-block-btn{
 display: flex;
@@ -193,6 +199,7 @@ button + button{
     position: relative;
     font-family: 'Philosopher', sans-serif;
     margin-bottom: 56px;
+    overflow: hidden;
     &::before{
         position: absolute;
         content: '';
@@ -204,13 +211,15 @@ button + button{
     }
 }
 .ok-main-catalog-title{
+    padding-left: 10px;
     font-size: 24px;
     font-family: 'Forum', cursive;
 }
 .ok-catalog-book{
     padding-top: 100px;
-
+    
 }
+
 .ok-select-page{
     display: flex;
     justify-content: space-between;
@@ -254,7 +263,14 @@ button + button{
     font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
     color: #110601;
+    display: none;
+    @include breakpoint(medium){
+        display: block;
+    }
 }
 .margin-block{
-    margin-top: 100px;
+    margin-top: 20px;
+    @include breakpoint(medium){
+        margin-top: 100px;
+    }
 }
