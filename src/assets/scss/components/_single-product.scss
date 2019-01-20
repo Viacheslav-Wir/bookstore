@@ -12,17 +12,17 @@
         padding: 100px 0 50px;
 
     }
-    &__img{
-        display: flex;
-        // max-height: 200px;
-        @include breakpoint(medium){
-            display: block;
+    // &__img{
+    //     display: flex;
+    //     // max-height: 200px;
+    //     @include breakpoint(medium){
+    //         display: block;
             
-        }
-        img{
-            width: 100%;
-        }
-    }
+    //     }
+    //     img{
+    //         width: 100%;
+    //     }
+    
     .ok-single-product__title{
         font-size: 24px;
         font-family: 'Forum', cursive;
@@ -247,4 +247,62 @@
            
         }
     }
+}
+.ok-single-product__img{
+    cursor: pointer;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+.ok-book-wrap-signle{
+    // backface-visibility: hidden;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: .6s ease-in;
+    
+    .ok-book-signle-spine{
+        position: absolute;
+        content: "";
+        width: 31px;
+        top: 0;
+        left: -16px;
+        right: 0;
+        bottom: 0;
+        background: #7F7979;
+        transform: rotateY(90deg) translateX(14px);
+    }
+    img{
+        width: 100%;
+    }
+}
+.hover-book{
+    &:hover{
+   transform: rotateY(40deg);
+   transition: .6s ease-in;
+    }
+}
+.flip-book{
+    .ok-title-single-{
+        // z-index: -1;
+    }
+    &:hover{
+        transform: rotateY(180deg);
+        transition: .6s ease-in;
+         }
+}
+
+.ok-back-single{
+    background-image: url(../img/back-book.jpg);
+    background-size: cover;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    // background: #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    transform: rotateY(-180deg) translateZ(30px);
 }

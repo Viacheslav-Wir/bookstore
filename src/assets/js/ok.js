@@ -72,3 +72,22 @@ $(function() {
   })();
 
 });
+
+$(document).ready(function(){
+  $('.ok-book-wrap-signle').mouseenter(
+     function() {
+      $( this ).addClass('hover-book');
+    }
+  );
+  $('.ok-book-wrap-signle').mouseleave(
+    function() {
+     $( this ).removeClass('hover-book');
+   }
+ );
+});
+
+
+$(".ok-book-wrap-signle").click(function(){
+  $(this).addClass("flip-book");
+});
+
