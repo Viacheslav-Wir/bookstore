@@ -134,25 +134,50 @@
             const qty = document.getElementById(idQuantity).value;
 
             if (localStorage.getItem("cart")){
-                const productsId = localStorage.getItem("cart");
+                const productsLocal = localStorage.getItem("cart");
+                const compareId =  '-' + idProduct + ':';
+                let listCompareId = productsLocal.split('|')
 
-                localStorage.setItem("cart", productsId + "|" + idProduct + ':' + qty);
+                for (let i=0; i < listCompareId.length; i++){
+                    if (listCompareId[i].match(compareId)){
+                        const newValue = '-' + idProduct + ':' + qty + '-';
+
+                        console.log(listCompareId)
+                        listCompareId.slice(i, 1);
+                        listCompareId.push(newValue);
+                    }
+                }
+                        console.log(listCompareId)
+
+                // listCompareId.forEach( function(el) {
+                    
+                // });
+                // if (productsLocal.match(compareId)){
+                //     console.log('Match')
+                //     const newValue = '-' + idProduct + ':' + qty + '-';
+                //     const deletableValue = '-' + idProduct + ':' + '\\d{0,2}' + '-';
+                //     console.log(newValue)
+                //     console.log(deletableValue)
+                    
+                //     productsLocal.replace(deletableValue, newValue);
+                // }
+                localStorage.setItem("cart", productsLocal + "|" + "-" + idProduct + ':' + qty + "-");
             } else{
-                localStorage.setItem("cart", idProduct + ':' + qty);
+                localStorage.setItem("cart", "-" + idProduct + ':' + qty + "-");
             }
         }
 
+        let qty = document.getElementById("vo-single-product-qty");
+        qty.value = 1;
+
         function changeQuantity (productPrice, idQuantity, idPrice, action) {
-            const qty = document.getElementById(idQuantity).value;
             const price = document.getElementById(idPrice);
 
+            qty = document.getElementById(idQuantity).value;
             if(action){
                 qtyNumber = parseInt(qty, 10);
-                console.log(action,qtyNumber)
                 price.innerText = productPrice * qtyNumber + ' грн';
             } else{
-                console.log(action,qtyNumber)
-
                 qtyNumber = parseInt(qty, 10);
                 price.innerText = productPrice * qtyNumber + ' грн';
             }
