@@ -36,9 +36,11 @@
                         </div>
                     </div>
                     <span class="ok-single-product__price">
-                        <svg>
-                            <use xlink:href="#ok-shoping-cart" />
-                        </svg>
+                        <a href="../order-cart.html">
+                            <svg>
+                                <use xlink:href="#ok-shoping-cart" />
+                            </svg>
+                        </a>
                         <span id="vo-single-product-price">--price-- грн</span>
                     </span>
                     <div class="ok-single-product__btn">
@@ -136,52 +138,48 @@
             if (localStorage.getItem("cart")){
                 const productsLocal = localStorage.getItem("cart");
                 const compareId =  '-' + idProduct + ':';
-                let listCompareId = productsLocal.split('|')
+                let listCompareId = productsLocal.split(',');
+                let exist = false;
+                let index = '';
 
                 for (let i=0; i < listCompareId.length; i++){
                     if (listCompareId[i].match(compareId)){
-                        const newValue = '-' + idProduct + ':' + qty + '-';
-
-                        console.log(listCompareId)
-                        listCompareId.slice(i, 1);
-                        listCompareId.push(newValue);
+                        exist = true;
+                        index = i;
                     }
                 }
-                        console.log(listCompareId)
 
-                // listCompareId.forEach( function(el) {
-                    
-                // });
-                // if (productsLocal.match(compareId)){
-                //     console.log('Match')
-                //     const newValue = '-' + idProduct + ':' + qty + '-';
-                //     const deletableValue = '-' + idProduct + ':' + '\\d{0,2}' + '-';
-                //     console.log(newValue)
-                //     console.log(deletableValue)
-                    
-                //     productsLocal.replace(deletableValue, newValue);
-                // }
-                localStorage.setItem("cart", productsLocal + "|" + "-" + idProduct + ':' + qty + "-");
+                if (exist){
+                    const newValue = '-' + idProduct + ':' + qty + '-';
+                    let finalList = listCompareId.slice();
+
+                    finalList.splice(index, 1);
+                    finalList.push(newValue);
+
+                    var finalString = finalList.join();
+
+                    localStorage.setItem("cart", finalString);
+                } else{
+                    localStorage.setItem("cart", productsLocal + "," + "-" + idProduct + ':' + qty + "-");
+                }
             } else{
                 localStorage.setItem("cart", "-" + idProduct + ':' + qty + "-");
             }
         }
 
-        let qty = document.getElementById("vo-single-product-qty");
-        qty.value = 1;
-
         function changeQuantity (productPrice, idQuantity, idPrice, action) {
-            const price = document.getElementById(idPrice);
+            let price = document.getElementById(idPrice);
+            let qty = document.getElementById(idQuantity).value;
 
-            qty = document.getElementById(idQuantity).value;
             if(action){
-                qtyNumber = parseInt(qty, 10);
+                qtyNumber = parseInt(qty, 10) + 1;
                 price.innerText = productPrice * qtyNumber + ' грн';
             } else{
-                qtyNumber = parseInt(qty, 10);
-                price.innerText = productPrice * qtyNumber + ' грн';
+                if (price.innerText.split(' ')[0] !== productPrice.toString() ){
+                    qtyNumber = parseInt(qty, 10) - 1;
+                    price.innerText = productPrice * qtyNumber + ' грн';
+                }
             }
-            
         }
 
     </script>

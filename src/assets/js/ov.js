@@ -11,7 +11,7 @@ import $ from 'jquery';
     function generateCatalogPagesData(sortType, url){
         const xhr = new XMLHttpRequest();
         const cartList = document.querySelector('.vo-cart-list');
-        let cartTmpl = document.getElementById('product-cart').innerHTML,
+        let cartTmpl = document.getElementById('product-catalog').innerHTML,
             cartListHTML = '';
 
         xhr.onload = function (){
@@ -48,34 +48,35 @@ import $ from 'jquery';
                     cartListHTML = '';
                 }
             }
-            cartList.innerHTML = localStorage.getItem(sortType + 20);
+            // cartList.innerHTML = localStorage.getItem(sortType + 20);
         };
 
         xhr.open('GET', url);
         xhr.send();
     }
 
-    if(document.getElementById('product-cart')){
+    if(document.getElementById('product-catalog')){
         generateCatalogPagesData('price_min', url_price_min);
         generateCatalogPagesData('price_max', url_price_max);
         generateCatalogPagesData('title_abc', url_title_abc);
         generateCatalogPagesData('title_cba', url_title_cba);
     }
 
-    function addToBasket (idProduct) {
-        const xhr = new XMLHttpRequest();
-        const url = '../assets/data/all_by_id';
+    // function addToBasket (idProduct) {
+    //     const xhr = new XMLHttpRequest();
+    //     const url = '../assets/data/all_by_id';
 
-        xhr.onload = function (){
-            let ajax = this;
-            const data = JSON.parse(ajax.response);
+    //     xhr.onload = function (){
+    //         let ajax = this;
+    //         const data = JSON.parse(ajax.response);
 
-            console.log(data[idProduct])
-        };
+    //         console.log(data[idProduct])
+    //         return data[idProduct]
+    //     };
 
-        xhr.open('GET', url);
-        xhr.send();
-    }
+    //     xhr.open('GET', url);
+    //     xhr.send();
+    // }
 
 })();
 
