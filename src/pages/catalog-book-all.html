@@ -1,22 +1,23 @@
 <section class="ok-catalog-book">
     <div class="row">
-            <span class="ok-main-catalog-title">Головна/Каталог</span>
-            
+        <span class="ok-main-catalog-title">Головна/Каталог</span>
     </div>
     <h3 class="ok-catalog-title">Усі видання</h3>
     <div class="row align-center">
         <div class="small-10">
             <div class="ok-select-page">
-                <select class="ok-select-up-down" name="" id="" >
-                    <option value="#" disabled selected>сортувати за...</option>
-                    <option value="price-down">спаданням ціни</option>
-                    <option value="price-up">зростанням ціни</option>
+                <select class="ok-select-up-down" name="" id="sort" onchange="pagiantionSortCatalog()">
+                    <option value="" disabled selected>сортувати за...</option>
+                    <option value="title_abc">назвою книг (а->я)</option>
+                    <option value="title_cba">назвою книг (я->а)</option>
+                    <option value="price_min">спаданням ціни</option>
+                    <option value="price_max">зростанням ціни</option>
                 </select>
-                <div class="ok-select-number-page">
-                    <span onclick="bookForCatalog(1)">1</span>
-                    <span onclick="bookForCatalog(2)">2</span>
-                    <span onclick="bookForCatalog(3)">3</span>
-                    <span onclick="bookForCatalog(4)">4</span>
+                <div class="ok-select-number-page" id="page">
+                    <span class="page-number page-active" onclick="changeActivePageClass(this); pagiantionSortCatalog();">1</span>
+                    <span class="page-number" onclick="changeActivePageClass(this); pagiantionSortCatalog();">2</span>
+                    <span class="page-number" onclick="changeActivePageClass(this); pagiantionSortCatalog();">3</span>
+                    <span class="page-number" onclick="changeActivePageClass(this); pagiantionSortCatalog();">4</span>
                 </div>
                 <!-- /.ok-select-number-page -->
             </div>
@@ -27,7 +28,7 @@
     
        
         <div class="row vo-cart-list"></div>
-        <script type="text/template" id="product-cart">
+        <script type="text/template" id="product-catalog">
             <div class="column small-12 medium-6 large-3">
                 <div class="ok-book-all-catalog" onclick="clickOnProduct(--product-id--)">
                     <a href="../single-product.html" >
@@ -68,10 +69,10 @@
             <div class="ok-select-page">
                <span class="ok-how-much-item">показано 20 результатів з 983</span>
                 <div class="ok-select-number-page">
-                    <span onclick="bookForCatalog(5)">1</span>
-                    <span onclick="bookForCatalog(6)">2</span>
-                    <span onclick="bookForCatalog(7)">3</span>
-                    <span onclick="bookForCatalog(8)">4</span>
+                    <span onclick="changeActivePageClass(this); pagiantionSortCatalog();">1</span>
+                    <span onclick="changeActivePageClass(this); pagiantionSortCatalog();">2</span>
+                    <span onclick="changeActivePageClass(this); pagiantionSortCatalog();">3</span>
+                    <span onclick="changeActivePageClass(this); pagiantionSortCatalog();">4</span>
                 </div>
                 <!-- /.ok-select-number-page -->
             </div>
@@ -99,39 +100,69 @@
                         localStorage.setItem('productSingle', elementToString);
                     }
                 });
-
             };
             xhr.open('GET', url_);
             xhr.send();
         }
 
-        function bookForCatalog (page_number) {
-            const cartList = document.querySelector('.vo-cart-list');
+        function changeActivePageClass(element) {
+            const pages =  document.querySelectorAll('.page-number');
 
+            pages.forEach( function(el) {
+                el.classList.remove("page-active");
+            });
+            element.classList.add("page-active");
+        }
+
+        function pagiantionSortCatalog(){
+            const cartList = document.querySelector('.vo-cart-list');
+            const selectElement = document.getElementById("sort");
+            const value = selectElement[selectElement.selectedIndex].value;
+            const page_number = document.querySelector('.page-active').innerText;
+
+            if(value){
+                loadDataForCatalog(cartList, page_number, value);
+            } else {
+                loadDataForCatalog(cartList, page_number, "title_abc");
+            }
+        }
+
+        function loadDataForCatalog (cartList, page_number, value) {
             if (page_number == 1 | page_number == 5){
                 cartList.innerHTML = '';
-                cartList.innerHTML = localStorage.getItem("price_min20");
+                cartList.innerHTML = localStorage.getItem(value + "20");
             } else if (page_number == 2 | page_number == 6) {
                 cartList.innerHTML = '';
-                cartList.innerHTML = localStorage.getItem("price_min40");
+                cartList.innerHTML = localStorage.getItem(value + "40");
             } else if (page_number == 3 | page_number == 7) {
                 cartList.innerHTML = '';
-                cartList.innerHTML = localStorage.getItem("price_min60");
+                cartList.innerHTML = localStorage.getItem(value + "60");
             } else if (page_number == 4 | page_number == 8){
                 cartList.innerHTML = '';
-                cartList.innerHTML = localStorage.getItem("price_min80");
+                cartList.innerHTML = localStorage.getItem(value + "80");
             }
-       }
+        }
+
+        pagiantionSortCatalog();
 
         function addToCartCatalog (idProduct) {
             if (localStorage.getItem("cart")){
-                const productsId = localStorage.getItem("cart");
+                const productsLocal = localStorage.getItem("cart");
+                let exist = false;
+                let listCompareId = productsLocal.split(',');
 
-                localStorage.setItem("cart", productsId + "|" + idProduct + ':1');
+                for (let i=0; i < listCompareId.length; i++){
+                    if (listCompareId[i].match(idProduct)){
+                        exist = true;
+                    }
+                }
+                if (exist == false){
+                    localStorage.setItem("cart", productsLocal + "," + "-" + idProduct + ':1-');
+                }
             } else{
-                localStorage.setItem("cart", idProduct + ':1');
+                localStorage.setItem("cart", "-" + idProduct + ':1-');
             }
         }
-   </script>
+    </script>
 </section>
 <!-- /.ok-catalog-book -->

@@ -15,3 +15,66 @@
     cursor: pointer;
     color: #F9D61C;
 }
+span.page-active{
+    color: #F9D61C;
+    cursor: default;
+}
+.vo-cart-title{
+    font-size: 36px;
+    color: #110601;
+    font-family: Philosopher;
+    border-bottom: 1px solid #110601;
+    margin-bottom: 25px;
+}
+.vo-cart-title h4{
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.vo-cart-table-head{
+    font-family: Forum;
+    border-bottom: 1px solid #110601;
+    display: flex;
+    line-height: 29px;
+    font-size: 24px;
+    color: #110601;
+}
+.vo-cart-table-footer{
+    display: flex;
+    justify-content: flex-end;
+    line-height: 29px;
+    font-size: 24px;
+    color: #110601;
+    border-top: 1px solid #110601;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.vo-cart-tab-title{
+    font-size: 30px;
+    color: #999999;
+    padding-left: 15px;
+}
+.order{
+    overflow-y: hidden;
+}
+.callout{
+    border: none;
+}
+.vo-qty-price{
+    display: flex;
+    justify-content: space-between;
+    margin-left: -10px;
+}
+.close-button{
+    position: absolute;
+    top: 20px;
+    right: -25px;
+}
+.ok-order-img img{
+    max-width: 160px;
+}
+.vo-minus{
+    min-width: 30px;
+}
+.vo-plus{
+    min-width: 30px;
+}

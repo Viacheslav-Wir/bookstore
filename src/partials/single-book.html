@@ -36,9 +36,11 @@
                         </div>
                     </div>
                     <span class="ok-single-product__price">
-                        <svg>
-                            <use xlink:href="#ok-shoping-cart" />
-                        </svg>
+                        <a href="../order-cart.html">
+                            <svg>
+                                <use xlink:href="#ok-shoping-cart" />
+                            </svg>
+                        </a>
                         <span id="vo-single-product-price">--price-- грн</span>
                     </span>
                     <div class="ok-single-product__btn">
@@ -134,29 +136,50 @@
             const qty = document.getElementById(idQuantity).value;
 
             if (localStorage.getItem("cart")){
-                const productsId = localStorage.getItem("cart");
+                const productsLocal = localStorage.getItem("cart");
+                const compareId =  '-' + idProduct + ':';
+                let listCompareId = productsLocal.split(',');
+                let exist = false;
+                let index = '';
 
-                localStorage.setItem("cart", productsId + "|" + idProduct + ':' + qty);
+                for (let i=0; i < listCompareId.length; i++){
+                    if (listCompareId[i].match(compareId)){
+                        exist = true;
+                        index = i;
+                    }
+                }
+
+                if (exist){
+                    const newValue = '-' + idProduct + ':' + qty + '-';
+                    let finalList = listCompareId.slice();
+
+                    finalList.splice(index, 1);
+                    finalList.push(newValue);
+
+                    var finalString = finalList.join();
+
+                    localStorage.setItem("cart", finalString);
+                } else{
+                    localStorage.setItem("cart", productsLocal + "," + "-" + idProduct + ':' + qty + "-");
+                }
             } else{
-                localStorage.setItem("cart", idProduct + ':' + qty);
+                localStorage.setItem("cart", "-" + idProduct + ':' + qty + "-");
             }
         }
 
         function changeQuantity (productPrice, idQuantity, idPrice, action) {
-            const qty = document.getElementById(idQuantity).value;
-            const price = document.getElementById(idPrice);
+            let price = document.getElementById(idPrice);
+            let qty = document.getElementById(idQuantity).value;
 
             if(action){
-                qtyNumber = parseInt(qty, 10);
-                console.log(action,qtyNumber)
+                qtyNumber = parseInt(qty, 10) + 1;
                 price.innerText = productPrice * qtyNumber + ' грн';
             } else{
-                console.log(action,qtyNumber)
-
-                qtyNumber = parseInt(qty, 10);
-                price.innerText = productPrice * qtyNumber + ' грн';
+                if (price.innerText.split(' ')[0] !== productPrice.toString() ){
+                    qtyNumber = parseInt(qty, 10) - 1;
+                    price.innerText = productPrice * qtyNumber + ' грн';
+                }
             }
-            
         }
 
     </script>
