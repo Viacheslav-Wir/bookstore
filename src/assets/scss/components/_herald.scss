@@ -1,0 +1,141 @@
+// .hzh-herald
+.hzh-herald{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    @include breakpoint(large){
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    &__about{
+        display: block;
+        margin-bottom: 25px;
+        @include breakpoint(large){
+            display: flex;
+        }
+        p{
+            font-family: $ubuntu-font-family;
+            font-weight: 300;
+            line-height: 19px;
+            font-size: 14px;
+            color: #7F7979;
+            margin-left: 10%;
+        }
+        img{
+            margin-left: 30px;
+        }
+        .hzh-marksANDcom{
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            a:first-child::before{
+                content: url('../../../assets/img/marks.svg');
+                width: 20px;
+                height: 20px;  
+                margin-right: 7px;               
+            }
+            a:last-child::before{
+                content: url('../../../assets/img/comm.svg');
+                width: 20px;
+                height: 20px;
+                margin-right: 7px;                                  
+            }
+            a{
+                font-family: $ubuntu-font-family;
+                font-weight: 300;
+                line-height: 19px;
+                font-size: 14px;
+                color: #110601;
+            }
+        }
+    }
+}
+
+
+
+.breadCrumbs{
+    margin-bottom: 25px;
+    @include breakpoint(medium large){
+        margin-bottom: 45px;
+    }
+    a{
+        font-family: $forum-font-family;
+        line-height: 29px;
+        font-size: 24px;
+        color: #110601; 
+        
+        &:hover{
+            border-bottom: 10px solid rgba(249, 214, 28, 0.35);
+        }   
+    }
+}
+
+// .hzh-herald__thematicSeries
+.hzh-herald__thematicSeries{
+    h4{
+        font-family: $forum-font-family;
+        line-height: 29px;
+        font-size: 24px;
+        color: #110601;
+        margin-bottom: 30px;
+        &:hover{
+            border-bottom: 1px solid #000000;
+        }
+    }
+}
+.hzh-herald__thematicSeries--title{
+        margin-left: 5%;
+        font-family: $forum-font-family;
+        font-size: 30px;
+        color: #000000;
+        margin-bottom: 45px;
+        &::after{
+            position: absolute;
+            content: " ";
+            border: 0.5px solid #110601;
+            display: table-cell;
+            text-align: center;
+            width: 20%;
+            margin: 0 auto;    
+            overflow: hidden; 
+    }
+}
+.hzh-herald__thematicSeries--info{
+    border: 0.5px solid #999999;
+    box-sizing: border-box;
+    max-width: 300px;
+    padding: 5px;
+    margin-left: 10%;
+    @include breakpoint(medium large){
+        padding-top: 45px;
+        padding-left: 75px;
+        padding-right: 150px;
+        padding-bottom: 20px;  
+        max-width: 900px;  
+    }
+    &:last-child{
+        margin-bottom: 50px;
+        @include breakpoint(medium large){
+            margin-bottom: 100px;
+        }
+    }
+    &:not(:last-child){
+        margin-bottom: 25px;
+        @include breakpoint(medium large){
+            margin-bottom: 45px;
+        }
+    }
+    .hzh-numbers{
+        max-width: 700px;
+        a{
+            margin-right: 15px;
+            font-family: $ubuntu-font-family;
+            font-weight: 300;
+            line-height: 22px;
+            font-size: 16px;
+            color: #000000;
+            &:hover{
+                background: rgba(249, 214, 28, 0.35);
+            }
+        }
+    }
+}

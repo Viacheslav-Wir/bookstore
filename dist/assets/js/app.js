@@ -23058,17 +23058,10 @@ __webpack_require__.r(__webpack_exports__);
 
   var xhr = new XMLHttpRequest();
   var cartList = document.querySelector('.vo-cart-list'),
-<<<<<<< HEAD
       url_price_min = '../assets/data/price_all_min.json',
       url_price_max = '{{root}}assets/price_all_max.json',
       url_title_abc = '{{root}}assets/title_all_abc.json',
       url_title_cba = '{{root}}assets/title_all_cba.json';
-=======
-      url_price_min = './data/price_all_min.json',
-      url_price_max = './data/price_all_max.json',
-      url_title_abc = './data/title_all_abc.json',
-      url_title_cba = './data/title_all_cba.json';
->>>>>>> dev
   var cartTmpl = document.getElementById('product-cart').innerHTML,
       cartListHTML = ''; // if (cartTmpl){
   //     cartTmpl = cartTmpl.innerHTML;
@@ -23106,7 +23099,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! d:\ba-comanda\bookstore\src\assets\js\app.js */"./src/assets/js/app.js");
+module.exports = __webpack_require__(/*! d:\ba-comanda__2.0\bookstore\src\assets\js\app.js */"./src/assets/js/app.js");
 
 
 /***/ })
