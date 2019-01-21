@@ -77,6 +77,7 @@
     }
     .ok-title-nav{
         display: none;  
+        
 }
     .ok-user__btn{
         padding-top: 8px;
@@ -176,7 +177,8 @@
     }
     @media screen and (max-width: 639px){
         .ok-title-nav{
-         display: block;
+         display: inline-flex;
+         align-items: center;
          font-family: 'Philosopher', sans-serif;
          font-style: italic;
          font-size: 12px;
