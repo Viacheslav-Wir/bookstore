@@ -1,0 +1,89 @@
+// hzh-information
+.hzh-information{
+    padding-top: 50px;
+    @include breakpoint(medium large){
+        padding-top: 100px;
+    }
+    aside{
+        margin-top: 100px;
+    }
+    span{
+        font-family: $forum-font-family;
+        font-size: 30px;
+        color: #999999;
+        margin-bottom: 30px;
+    }
+    .hzh-acc-btn{
+        background: rgba(255, 179, 32, 0.94);
+        opacity: 0.55;
+        font-family: $philosopher-font-family;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+        color: #110601;
+        height: 50px;
+        width: 200px;
+        cursor: pointer;
+        &:hover{
+            font-size: 24px;
+        }
+    }
+}
+.hzh-info{
+
+    .hzh-info-bottom{
+        font-family: $ubuntu-font-family;
+        font-weight: 300;
+        line-height: 22px;
+        font-size: 16px;
+        text-align: center;
+        color: #999999;
+        max-width: 350px;
+    }
+    .hzh-choose{
+        a{
+            font-family: $forum-font-family;
+            line-height: 29px;
+            font-size: 24px;
+            color: #110601;
+            &:hover{
+                border-bottom: 10px solid rgba(249, 214, 28, 0.35);
+            }
+        }
+
+    }
+    form{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        p{
+            font-family: $ubuntu-font-family;
+            font-weight: 300;
+            line-height: 19px;
+            font-size: 14px;
+            text-align: right;
+            margin-right: 5px;
+            color: #110601;
+            max-width: 100px;
+        }
+        input{
+            font-family: $ubuntu-font-family;
+            font-size: 16px;
+            color: #110601;
+            padding: 10px;
+        }
+    }
+    h2{
+        margin-right: 5%;
+    }
+}
+
+input.hzh-checkbox{
+    font-family: Ubuntu;
+font-style: normal;
+font-weight: 300;
+line-height: 19px;
+font-size: 14px;
+
+color: #7F7979;
+}
