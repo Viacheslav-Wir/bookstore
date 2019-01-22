@@ -71,6 +71,11 @@ span.page-active{
     position: absolute;
     top: 20px;
     left: 20px;
+    @include breakpoint(medium){
+        left: unset;
+        top: 5px;
+        right: 10px;
+    }
 }
 .ok-order-img img{
     max-width: 100%;
