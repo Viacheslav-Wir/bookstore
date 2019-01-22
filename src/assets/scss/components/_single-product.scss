@@ -296,6 +296,13 @@
 
     }
 }
+@media (max-width: 360px) {
+    .ok-title-single{
+        img{
+            height: unset;
+        }
+    }
+}
 .flip-book{
     @include breakpoint(large){
         &:hover{
