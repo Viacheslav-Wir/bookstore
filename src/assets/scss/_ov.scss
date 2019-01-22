@@ -61,16 +61,27 @@ span.page-active{
 }
 .vo-qty-price{
     display: flex;
-    justify-content: space-between;
-    margin-left: -10px;
+    // justify-content: space-between;
+    // margin-left: -10px;
+    div + div{
+        margin-left: 60px;
+    }
 }
 .close-button{
     position: absolute;
     top: 20px;
-    right: -25px;
+    left: 20px;
+    @include breakpoint(medium){
+        left: unset;
+        top: 5px;
+        right: 10px;
+    }
 }
 .ok-order-img img{
-    max-width: 160px;
+    max-width: 100%;
+    @include breakpoint(medium){
+        max-width: 160px;
+    }
 }
 .vo-minus{
     min-width: 30px;

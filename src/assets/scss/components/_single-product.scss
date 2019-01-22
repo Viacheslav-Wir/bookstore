@@ -284,19 +284,7 @@
 
     }
 }
-.ok-back-single{
-    display: none;
-    p{
-        display: none;
-    }
-    @include breakpoint(large){
-        display: block;
-        p{
-            display: inline;
-        }
-       
-    }
-}
+
 .ok-title-single{
     img{
         height: 100%;
@@ -316,13 +304,24 @@
              }
     
     
-    .ok-back-single{
+   
+    }
+}
+.ok-back-single{
+    height: 0;
+    p{
+        display: none;
+    }
+    @include breakpoint(large){
+        p{
+            display: inline;
+        }
+        height: 100%;
         background-image: url(../img/back-book.jpg);
         background-size: cover;
         font-family: 'Ubuntu', sans-serif;
         font-size: 20px;
         padding: 10px;
-        // background: #ccc;
         position: absolute;
         top: 0;
         left: 0;
@@ -331,8 +330,7 @@
         width: 100%;
         z-index: 1;
         transform: rotateY(-180deg) translateZ(30px);
-    
-    }
+
     }
 }
     
