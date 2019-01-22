@@ -286,8 +286,15 @@
 }
 .ok-back-single{
     display: none;
+    p{
+        display: none;
+    }
     @include breakpoint(large){
-        display: flex;
+        display: block;
+        p{
+            display: inline;
+        }
+       
     }
 }
 .ok-title-single{
