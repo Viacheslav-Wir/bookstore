@@ -48,7 +48,7 @@
                     <div class="ok-book-all-catalog__info">
                         <div class="ok-block-btn">
                             <button class="ok-btn-bookmark"><svg width=30 height=30><use xlink:href="#ok-book-mark" /></svg></button>
-                            <button class="ok-btn-cart" onclick="addToCartCatalog(--product-id--)"><svg width=30 height=30><use xlink:href="#ok-shoping-cart" /></svg></button>
+                            <button class="ok-btn-cart --product-id--" onclick="addToCartCatalog(--product-id--)"><svg width=30 height=30><use xlink:href="#ok-shoping-cart" /></svg></button>
                         </div>
                         <!-- /.ba-block-btn -->
                         <div class="ok-block-info">
@@ -146,23 +146,29 @@
 
         pagiantionSortCatalog();
 
+       
         function addToCartCatalog (idProduct) {
+            console.log(idProduct);
+           
             if (localStorage.getItem("cart")){
                 const productsLocal = localStorage.getItem("cart");
                 let exist = false;
                 let listCompareId = productsLocal.split(',');
-
+ 
                 for (let i=0; i < listCompareId.length; i++){
                     if (listCompareId[i].match(idProduct)){
                         exist = true;
+                       
                     }
                 }
                 if (exist == false){
                     localStorage.setItem("cart", productsLocal + "," + "-" + idProduct + ':1-');
                 }
             } else{
+                
                 localStorage.setItem("cart", "-" + idProduct + ':1-');
             }
+           
         }
     </script>
 </section>

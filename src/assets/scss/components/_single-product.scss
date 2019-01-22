@@ -38,7 +38,7 @@
     }
    
     &__info-book{
-        margin-top: 15px;
+        margin-top: 0;
         @include breakpoint(medium){
             margin-top: 30px; 
            
@@ -47,6 +47,7 @@
         // justify-content: space-between;
         p{
             max-width: 175px;
+            margin-bottom: 0;
             font-size: 12px;
             line-height: 2;
             font-family: 'Ubuntu', sans-serif;
@@ -97,7 +98,7 @@
     font-size: 24px;
     margin-bottom: 8px;
     justify-content: center;
-    margin-top: 25px;
+    margin-top: 5px;
     @include breakpoint(medium){
         font-size: 36px;
         margin-bottom: 30px;
@@ -275,34 +276,56 @@
     }
 }
 .hover-book{
-    &:hover{
-   transform: rotateY(40deg);
-   transition: .6s ease-in;
+    @include breakpoint(large){
+        &:hover{
+       transform: rotateY(40deg);
+       transition: .6s ease-in;
+        }
+
+    }
+}
+.ok-back-single{
+    display: none;
+    @include breakpoint(large){
+        display: flex;
+    }
+}
+.ok-title-single{
+    img{
+        height: 100%;
+        width: auto;
+        @include breakpoint(medium){
+            height: auto;
+            width: 100%;
+        }
+
     }
 }
 .flip-book{
-    .ok-title-single-{
-        // z-index: -1;
+    @include breakpoint(large){
+        &:hover{
+            transform: rotateY(180deg);
+            transition: .6s ease-in;
+             }
+    
+    
+    .ok-back-single{
+        background-image: url(../img/back-book.jpg);
+        background-size: cover;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 20px;
+        padding: 10px;
+        // background: #ccc;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
+        transform: rotateY(-180deg) translateZ(30px);
+    
     }
-    &:hover{
-        transform: rotateY(180deg);
-        transition: .6s ease-in;
-         }
+    }
 }
-
-.ok-back-single{
-    background-image: url(../img/back-book.jpg);
-    background-size: cover;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
-    padding: 10px;
-    // background: #ccc;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 1;
-    transform: rotateY(-180deg) translateZ(30px);
-}
+    
