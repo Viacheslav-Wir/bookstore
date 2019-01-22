@@ -49,7 +49,7 @@
                             <button class="vo-minus vo-minus--product-id--"
                             onclick="quantityProducts('vo-plus--product-id--', 'vo-minus--product-id--', 'vo-num--product-id--', 0); changeQuantity(--price--, 'vo-cart-qty--product-id--', 'vo-cart-price--product-id--', 0);">- </button>
 
-                            <input class="vo-num--product-id-- qty-all" type="number" min="1" max="10" value="--qty--" id="vo-cart-qty--product-id--">
+                            <input class="vo-num--product-id-- qty-all" type="number" min="1" max="10" value="--qty--" id="vo-cart-qty--product-id--" readonly>
 
                             <button class="vo-plus vo-plus--product-id--"
                             onclick="quantityProducts('vo-plus--product-id--', 'vo-minus--product-id--', 'vo-num--product-id--', 1); changeQuantity(--price--, 'vo-cart-qty--product-id--', 'vo-cart-price--product-id--', 1);"> +</button>
@@ -64,8 +64,8 @@
 <div class="row">
     <div class="vo-cart-table-footer small-9 medium-offset-3">
         <div class="small-6 medium-7 vo-cart-tab-title-foot">Всього</div>
-        <div class="small-6 medium-4 vo-qty-price-foot">
-            324 грн
+        <div class="small-6 medium-4 vo-qty-price-foot" id="vo-price-summ" onclick="summAllPrices();">
+            0
         </div>
     </div>
 </div>
@@ -153,6 +153,7 @@
                 price.innerText = productPrice * qtyNumber + ' грн';
             }
         }
+        summAllPrices();
     }
 
     function quantityProducts(arrowPlus,arrowMinus,inputIdenti, action) {
@@ -172,24 +173,36 @@
 
     window.onload = function(){
         const clickList = document.querySelectorAll('.default-price');
+        let summa = document.getElementById('vo-price-summ');
 
         clickList.forEach( function(el) {
             el.click();
+        });
+
+        summa.click();
+    }
+
+    function summAllPrices(){
+        const allPrices = document.querySelectorAll('.ok-book-order-price');
+        let summa = document.getElementById('vo-price-summ');
+        let summaTemp = 0;
+
+        summa.innerText = '';
+        allPrices.forEach( function(el) {
+            summaTemp += parseInt(el.innerText.split(' ')[0], 10);
+            summa.innerText = summaTemp + ' грн';
         });
     }
 
     function defaultPrice (productPrice, idQuantity, idPrice) {
         let price = document.getElementById(idPrice);
-        let qty = document.getElementById(idQuantity).value;
+        let qty = document.getElementById(idQuantity).value;      
 
         qtyNumber = parseInt(qty, 10);
-        console.log(qtyNumber)
         price.innerText = productPrice * qtyNumber + ' грн';
     }
 
-    function summPrice () {
-        
-    }
+
     
 </script>
 </section>

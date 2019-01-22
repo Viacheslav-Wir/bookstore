@@ -6,20 +6,17 @@
     <div class="row align-justify">
         <div class="column small-6 medium-6 large-4">
             <div class="ok-single-product__img">
-                              <div class="ok-book-wrap-signle day">
-                                    <div class="ok-book-signle-spine"></div>
-                                <div class="ok-title-single ok-book-1"> 
-                                    <img src="{{root}}assets/img/n11.jpg" alt="book">
-                                </div>
-                                <div class="ok-back-single">
-                                    <p>Показано переваги імітаційного моделювання у дослідженні роботи регульованих перехресть,
-                                            використання нечіткої логіки в адаптивних алгоритмах керування та організації руху за окремими
-                                            напрямками з урахуванням потреб пішоходів та громадського транспорту.</p>
-                                </div>
-                              </div>
-                            
-                     
-                
+                  <div class="ok-book-wrap-signle day">
+                        <div class="ok-book-signle-spine"></div>
+                    <div class="ok-title-single ok-book-1"> 
+                        <img src="{{root}}assets/img/n11.jpg" alt="book">
+                    </div>
+                    <div class="ok-back-single">
+                        <p>Показано переваги імітаційного моделювання у дослідженні роботи регульованих перехресть,
+                                використання нечіткої логіки в адаптивних алгоритмах керування та організації руху за окремими
+                                напрямками з урахуванням потреб пішоходів та громадського транспорту.</p>
+                    </div>
+                  </div>
             </div>
             <!-- /.ok-single-product__img -->
         </div>
@@ -208,7 +205,7 @@
             productSingleHTML += productTmpl
             .replace(/--title--/ig, productData.title)
             .replace(/--author--/ig, productData.author)
-            .replace(/--image--/ig, productData.imageBig)
+            .replace(/--image--/ig, productData.image)
             .replace(/--description--/ig, productData.description)
             .replace(/--short-info--/ig, productData.short_info)
             .replace(/--year--/ig, productData.published)
@@ -223,7 +220,7 @@
             productSingleHTML += productTmpl
             .replace(/--title--/ig, productData.title)
             .replace(/--author--/ig, productData.author)
-            .replace(/--image--/ig, productData.imageBig)
+            .replace(/--image--/ig, productData.image)
             .replace(/--description--/ig, productData.description)
             .replace(/--short-info--/ig, productData.short_info)
             .replace(/--year--/ig, productData.published)
