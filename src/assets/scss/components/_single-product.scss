@@ -309,7 +309,13 @@
 }
 .ok-back-single{
     height: 0;
+    p{
+        display: none;
+    }
     @include breakpoint(large){
+        p{
+            display: inline;
+        }
         height: 100%;
         background-image: url(../img/back-book.jpg);
         background-size: cover;
