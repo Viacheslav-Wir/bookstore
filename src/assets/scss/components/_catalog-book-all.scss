@@ -19,7 +19,11 @@ transform-style: preserve-3d;
   transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
 }
 
-
+.click-book-cart{
+    svg{
+        color: #F9D61C;
+    }
+}
 .ok-book-page1{
     background: #efefef;
     

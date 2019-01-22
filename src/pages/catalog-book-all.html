@@ -48,7 +48,7 @@
                     <div class="ok-book-all-catalog__info">
                         <div class="ok-block-btn">
                             <button class="ok-btn-bookmark"><svg width=30 height=30><use xlink:href="#ok-book-mark" /></svg></button>
-                            <button class="ok-btn-cart --product-id--" onclick="addToCartCatalog(--product-id--)"><svg width=30 height=30><use xlink:href="#ok-shoping-cart" /></svg></button>
+                            <button class="ok-btn-cart" id="book--product-id--" onclick="addToCartCatalog(--product-id--)"><svg width=30 height=30><use xlink:href="#ok-shoping-cart" /></svg></button>
                         </div>
                         <!-- /.ba-block-btn -->
                         <div class="ok-block-info">
@@ -168,7 +168,9 @@
                 
                 localStorage.setItem("cart", "-" + idProduct + ':1-');
             }
-           
+           var addSvg = document.getElementById('book' + idProduct);
+           addSvg.classList.add('click-book-cart');
+
         }
     </script>
 </section>
