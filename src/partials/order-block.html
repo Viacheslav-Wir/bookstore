@@ -15,7 +15,7 @@
 
     <div class="vo-product-cart"></div>
     <script type="text/template" id="product-cart">
-        <div class="callout small-12" data-closable="slide-out-left">
+        <div class="callout small-12" data-closable="slide-out-left" id="vo-callout-item--product-id--">
             <div class="row" style="position: relative;">
                 <button class="close-button" aria-label="Dismiss alert" type="button" data-close onclick="deletFromCart(--product-id--, --qty--)"">
                     <span aria-hidden="true">&times;</span>
@@ -132,12 +132,17 @@
         const re1 = new RegExp('-'+idProduct+':'+idQuantity+'-,',"g");
         const re2 = new RegExp(',-'+idProduct+':'+idQuantity+'-',"g");
         const re3 = new RegExp('-'+idProduct+':'+idQuantity+'-',"g");
+        let summa = document.getElementById('vo-price-summ');
+        let calloutDeleteBlock = document.getElementById('vo-callout-item' + idProduct);
 
         localCartData =localCartData
                                 .replace(re1, '')
                                 .replace(re2, '')
                                 .replace(re3, '');
         localStorage.setItem('cart', localCartData);
+
+        calloutDeleteBlock.innerHTML = '';
+        summa.click();
     }
 
     function changeQuantity (productPrice, idQuantity, idPrice, action) {
@@ -201,8 +206,6 @@
         qtyNumber = parseInt(qty, 10);
         price.innerText = productPrice * qtyNumber + ' грн';
     }
-
-
     
 </script>
 </section>
