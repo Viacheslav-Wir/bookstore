@@ -318,13 +318,14 @@
     height: 0;
     p{
         display: none;
+        color: #fff;
     }
     @include breakpoint(large){
         p{
             display: inline;
         }
         height: 100%;
-        background-image: url(../img/back-book.jpg);
+        background:#7F7979;
         background-size: cover;
         font-family: 'Ubuntu', sans-serif;
         font-size: 20px;
