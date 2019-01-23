@@ -1,12 +1,16 @@
-#hzh-map{
+#hzh-bookstoremap{
     display: none;
     @include breakpoint(medium large){
         display: block;
+        width: 100%;
+        height: 600px;
+        margin-bottom: 45px;
     }
 }
 .hzh-bookstore{
     &__location{
-        display: block;
+        // display: block;
+        display: flex;
         @include breakpoint(medium large){
             display: flex;
             margin-bottom: 95px;
@@ -15,12 +19,12 @@
             }      
         }
         align-items: center;
-        
         img{
+            // display: none;
             @include breakpoint(medium large){
                 width: 50%;
             }
-            width: 100%;
+            width: 40%;
         }
         &--adress{
             max-width: 250px;
