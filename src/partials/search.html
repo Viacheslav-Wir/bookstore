@@ -1,15 +1,17 @@
 <section class="hzh-search">
     <div class="row column">
         <form action="#" method="GET">
-            <div>
-                <span class="close"></span>
+            <div class="callout" data-closable>
                 <input name="s" type="search" minlength="3" size="40">
-                <button type="submit" name="search" value="Пошук" class="submit">
+                <button type="button" name="search" value="Пошук" class="submit close-button"  aria-label="Close alert" data-close>
                     <svg width="29" height="30">
-                        <use xlink:href="#svg-search" />
+                        <use xlink:href="#svg-search">
                     </svg>
                     Пошук
+                    <span aria-hidden="true">&times;</span>
                 </button>
+                <p>Знаходь потрібні статті, посібники та видання</p>
+
 
     <!-- <div class="row">
         <div class="columns">
@@ -26,7 +28,6 @@
                 </form> -->
     
             </div>
-       </form>
-       </div>
-    
+        </div>
+    </div>
 </section>

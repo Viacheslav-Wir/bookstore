@@ -90,21 +90,25 @@
         }
     }
 }
-#hzh-map{
+#hzh-contactmap{
     width: 100%;
     height: 600px;
     margin-bottom: 100px;
+    z-index: -1;
     position: relative;
-    z-index: 0;
+
     }
-    // .hzh-map-adress{
-    //     font-family: $ubuntu-font-family;
-    //     font-weight: 300;
-    //     line-height: 22px;
-    //     font-size: 16px;
-    //     color: #000000;
-    //     z-index: 1;
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    // }
+    .hzh-map-adress{
+        display: block;
+        font-family: $ubuntu-font-family;
+        font-weight: 300;
+        line-height: 22px;
+        font-size: 16px;
+        color: #000000;
+        background: #FFFDFD;
+        padding: 20px 7px 6px 17px;
+        z-index: 1;
+        position: absolute;
+        bottom: -1270px;
+        left: 200px;
+    }
