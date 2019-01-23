@@ -18,9 +18,15 @@
                     <span id="span3"></span>
                 </button>
         <ul class="ok-user__btn">
-            <li><input class="ok-user-search" type="search" placeholder="Пошук"></li>
-            <li><a href="order-cart.html"><svg><use xlink:href="#ok-shoping-cart"></use></svg>Кошик</a></li>
-            <li><a href="sing-in.html"><svg><use xlink:href="#ok-sign-in"></use></svg>Увійти</a></li>
+            <li>
+                <input class="ok-user-search" type="search" placeholder="Пошук" id="vo-search" onkeypress="searchBooks(event);">
+            </li>
+            <li>
+                <a href="order-cart.html"><svg><use xlink:href="#ok-shoping-cart"></use></svg>Кошик</a>
+            </li>
+            <li>
+                <a href="sing-in.html"><svg><use xlink:href="#ok-sign-in"></use></svg>Увійти</a>
+            </li>
         </ul>
     </div>
     <!-- /.ok-user-btn -->
@@ -42,6 +48,16 @@
             </ul>
     </div>
     <!-- /.ba-menu-resp -->
+    <script>
+        function searchBooks (event) {
+            if(event.keyCode == 13){
+                const searchText = document.getElementById("vo-search").value;
+
+                localStorage.setItem('search', searchText);
+                window.open('../search-result.html');
+            }
+        }
+    </script>
 </section>
 <!-- /.ba-menu-adatpive -->
 

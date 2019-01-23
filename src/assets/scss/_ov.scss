@@ -103,3 +103,17 @@ span.page-active{
     }
 }
 
+.vo-search-title{
+    padding: 30px;
+    font-size: 24px;
+    font-family: 'Forum', cursive;
+}
+.vo-search-list{
+    overflow: hidden;
+    padding-left: 5px;
+    padding-right: 5px;
+    @include breakpoint(medium){
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

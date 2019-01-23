@@ -1,0 +1,113 @@
+<section class="ok-catalog-book">
+    <div class="row">
+        <span class="vo-search-title">Результати пошуку</span>
+    </div>
+    <div class="row align-center">
+
+    </div>
+
+    <div class="row vo-search-list" style="overflow: hidden;"></div>
+    <script type="text/template" id="search-book">
+        <div class="callout small-12" data-closable="slide-out-left" id="vo-callout-item--product-id--">
+            <div class="row" style="position: relative;">
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-close onclick="deletFromCart(--product-id--, --qty--)"">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="column small-6 medium-3 small-order-2 medium-order-1 ">
+                    <div class="ok-order-img">
+                        <img src="{{root}}assets/img/--image--" alt="--title--">
+                    </div>
+                </div>
+                <div class="column small-6 medium-5 small-order-3 medium-order-2">
+                    <div class="ok-order-info">
+                        <h5 class="ok-order-title">
+                            --title--
+                        </h5>
+                        <span class="ok-order-author">
+                            --author--
+                        </span>
+                        <div class="ok-book-info-order">
+                            <p class="small-12 medium-4">
+                               --isbn-- --pages-- --cover-- --year-- --format--
+                            </p>
+                            <span><svg><use xlink:href="#ok-comment" /></svg>коментувати</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="column small-12 medium-4 small-order-1 medium-order-3">
+                    <div class="order-price-quantity order-num">
+                    <!-- <div class="order-price-quantity ok-input-nubmer order-num"> -->
+                        <div class="default-price" onclick="defaultPrice(--price--, 'vo-cart-qty--product-id--', 'vo-cart-price--product-id--')" style="visibility:hidden;"></div>
+                        <div class="ok-input-nubmer order-num" >
+                            <button class="vo-minus vo-minus--product-id--"
+                            onclick="quantityProducts('vo-plus--product-id--', 'vo-minus--product-id--', 'vo-num--product-id--', 0); changeQuantity(--price--, 'vo-cart-qty--product-id--', 'vo-cart-price--product-id--', 0);">- </button>
+
+                            <input class="vo-num--product-id-- qty-all" type="number" min="1" max="10" value="--qty--" id="vo-cart-qty--product-id--" readonly>
+
+                            <button class="vo-plus vo-plus--product-id--"
+                            onclick="quantityProducts('vo-plus--product-id--', 'vo-minus--product-id--', 'vo-num--product-id--', 1); changeQuantity(--price--, 'vo-cart-qty--product-id--', 'vo-cart-price--product-id--', 1);"> +</button>
+                        </div>
+                        <span class="ok-book-order-price" id="vo-cart-price--product-id--">--price-- грн</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script>
+        const searchText = localStorage.getItem('search');
+        const xhr = new XMLHttpRequest();
+        const url = '../assets/data/title_all_abc.json';
+        const searchTmpl = document.getElementById('search-book').innerHTML;
+        const searchInsert = document.querySelector('.vo-search-list');
+        let searchHTML = '';
+
+        xhr.onload = function (){
+            let ajax = this;
+            const data = JSON.parse(ajax.response);
+
+            data.forEach( function(element) {
+                if (element.title.includes(searchText)){
+                    if (element.price){
+                        searchHTML += searchTmpl
+                            .replace(/--title--/ig, element.title)
+                            .replace(/--author--/ig, element.author)
+                            .replace(/--image--/ig, element.image)
+                            .replace(/--year--/ig, element.published)
+                            .replace(/--pages--/ig, element.pages)
+                            .replace(/--format--/ig, element.format)
+                            .replace(/--cover--/ig, element.cover)
+                            .replace(/--isbn--/ig, element.isbn)
+                            .replace(/--author--/ig, element.author)
+                            .replace(/--product-id--/ig, element.id)
+                            .replace(/--price--/ig, element.price)
+                            .replace(/--qty--/ig, 1);
+                    } else{
+                        searchHTML += searchTmpl
+                            .replace(/--title--/ig, cartData.title)
+                            .replace(/--author--/ig, cartData.author)
+                            .replace(/--image--/ig, cartData.image)
+                            .replace(/--year--/ig, cartData.published)
+                            .replace(/--pages--/ig, cartData.pages)
+                            .replace(/--format--/ig, cartData.format)
+                            .replace(/--cover--/ig, cartData.cover)
+                            .replace(/--isbn--/ig, cartData.isbn)
+                            .replace(/--author--/ig, cartData.author)
+                            .replace(/--product-id--/ig, cartData.id)
+                            .replace(/--price-- грн/ig, '')
+                            .replace(/--qty--/ig, 1);
+                    }
+                }
+            });
+
+            if (searchHTML){
+                searchInsert.innerHTML = searchHTML;
+            } else{
+                searchInsert.innerHTML = '<div style="min-width: 100%;padding: 30px;">Not found</div>';
+            }            
+        };
+
+        xhr.open('GET', url);
+        xhr.send();
+    </script>
+</section>
