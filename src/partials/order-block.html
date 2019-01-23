@@ -133,7 +133,7 @@
         const re2 = new RegExp(',-'+idProduct+':'+idQuantity+'-',"g");
         const re3 = new RegExp('-'+idProduct+':'+idQuantity+'-',"g");
         let summa = document.getElementById('vo-price-summ');
-        let calloutDeleteBlock = document.getElementById('vo-callout-item' + idProduct);
+        // let calloutDeleteBlock = document.getElementById('vo-callout-item' + idProduct);
 
         localCartData =localCartData
                                 .replace(re1, '')
@@ -141,8 +141,15 @@
                                 .replace(re3, '');
         localStorage.setItem('cart', localCartData);
 
-        calloutDeleteBlock.innerHTML = '';
+        // calloutDeleteBlock.innerHTML = '';
+        setTimeout(hideCatalogItem, 300);
         summa.click();
+    }
+
+    function hideCatalogItem () {
+        let calloutDeleteBlock = document.getElementById('vo-callout-item' + idProduct);
+
+        calloutDeleteBlock.innerHTML = '';
     }
 
     function changeQuantity (productPrice, idQuantity, idPrice, action) {
