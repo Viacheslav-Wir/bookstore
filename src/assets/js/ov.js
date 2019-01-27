@@ -79,4 +79,3 @@ import $ from 'jquery';
     // }
 
 })();
-

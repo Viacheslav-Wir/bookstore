@@ -107,6 +107,9 @@ span.page-active{
     padding: 30px;
     font-size: 24px;
     font-family: 'Forum', cursive;
+    span{
+        font-style: italic;
+    }
 }
 .vo-search-list{
     overflow: hidden;

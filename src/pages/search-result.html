@@ -1,6 +1,6 @@
 <section class="ok-catalog-book">
     <div class="row">
-        <span class="vo-search-title">Результати пошуку</span>
+        <span class="vo-search-title">Результати пошуку по запиту: "<span id="search_request"></span>"</span>
     </div>
     <div class="row align-center">
 
@@ -55,6 +55,7 @@
     </script>
 
     <script>
+        let searchRequest = document.getElementById('search_request');
         const searchText = localStorage.getItem('search');
         const xhr = new XMLHttpRequest();
         const url = '../assets/data/title_all_abc.json';
@@ -100,6 +101,7 @@
                 }
             });
 
+            searchRequest.innerHTML = searchText;
             if (searchHTML){
                 searchInsert.innerHTML = searchHTML;
             } else{

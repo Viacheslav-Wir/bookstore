@@ -32,7 +32,7 @@ function loadConfig() {
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, javascript, images, copy), sass, styleGuide));
+ gulp.series(clean, gulp.parallel(pages, javascript, images, favicons, copy), sass, styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -144,6 +144,10 @@ function images() {
       $.imagemin.jpegtran({ progressive: true }),
     ])))
     .pipe(gulp.dest(PATHS.dist + '/assets/img'));
+}
+function favicons() {
+  return gulp.src('src/favicons/**/*')
+    .pipe(gulp.dest(PATHS.dist));
 }
 
 // Start a server with BrowserSync to preview the site in

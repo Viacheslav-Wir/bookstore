@@ -47,12 +47,12 @@
                         <div class="default-price" onclick="defaultPrice(--price--, 'vo-cart-qty--product-id--', 'vo-cart-price--product-id--')" style="visibility:hidden;"></div>
                         <div class="ok-input-nubmer order-num" >
                             <button class="vo-minus vo-minus--product-id--"
-                            onclick="quantityProducts('vo-plus--product-id--', 'vo-minus--product-id--', 'vo-num--product-id--', 0); changeQuantity(--price--, 'vo-cart-qty--product-id--', 'vo-cart-price--product-id--', 0);">- </button>
+                            onclick="quantityProducts('vo-plus--product-id--', 'vo-minus--product-id--', 'vo-num--product-id--', 0); changeQuantity(--product-id--, --price--, 'vo-cart-qty--product-id--', 'vo-cart-price--product-id--', 0);">- </button>
 
                             <input class="vo-num--product-id-- qty-all" type="number" min="1" max="10" value="--qty--" id="vo-cart-qty--product-id--" readonly>
 
                             <button class="vo-plus vo-plus--product-id--"
-                            onclick="quantityProducts('vo-plus--product-id--', 'vo-minus--product-id--', 'vo-num--product-id--', 1); changeQuantity(--price--, 'vo-cart-qty--product-id--', 'vo-cart-price--product-id--', 1);"> +</button>
+                            onclick="quantityProducts('vo-plus--product-id--', 'vo-minus--product-id--', 'vo-num--product-id--', 1); changeQuantity(--product-id--, --price--, 'vo-cart-qty--product-id--', 'vo-cart-price--product-id--', 1);"> +</button>
                         </div>
                         <span class="ok-book-order-price" id="vo-cart-price--product-id--">--price-- грн</span>
                     </div>
@@ -142,17 +142,17 @@
         localStorage.setItem('cart', localCartData);
 
         // calloutDeleteBlock.innerHTML = '';
-        setTimeout(hideCatalogItem, 300);
+        setTimeout(hideCatalogItem(idProduct), 300);
         summa.click();
     }
 
-    function hideCatalogItem () {
+    function hideCatalogItem (idProduct) {
         let calloutDeleteBlock = document.getElementById('vo-callout-item' + idProduct);
 
         calloutDeleteBlock.innerHTML = '';
     }
 
-    function changeQuantity (productPrice, idQuantity, idPrice, action) {
+    function changeQuantity (idProduct, productPrice, idQuantity, idPrice, action) {
         let price = document.getElementById(idPrice);
         let qty = document.getElementById(idQuantity).value;
 
@@ -166,6 +166,17 @@
             }
         }
         summAllPrices();
+
+        // Save new qty to storage
+        const productsLocal = localStorage.getItem("cart");
+        let listCompareId = productsLocal.split(',');
+ 
+        for (let i=0; i < listCompareId.length; i++){
+            if (listCompareId[i].match(idProduct)){
+                listCompareId[i] = "-" + idProduct + ':' + qty + '-';
+            }
+        }
+        localStorage.setItem("cart", listCompareId.join());
     }
 
     function quantityProducts(arrowPlus,arrowMinus,inputIdenti, action) {

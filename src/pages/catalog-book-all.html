@@ -156,7 +156,6 @@
                 for (let i=0; i < listCompareId.length; i++){
                     if (listCompareId[i].match(idProduct)){
                         exist = true;
-                       
                     }
                 }
                 if (exist == false){
@@ -166,9 +165,10 @@
                 
                 localStorage.setItem("cart", "-" + idProduct + ':1-');
             }
-           var addSvg = document.getElementById('book' + idProduct);
-           addSvg.classList.add('click-book-cart');
 
+            var addSvg = document.getElementById('book' + idProduct);
+
+            addSvg.classList.add('click-book-cart');
         }
     </script>
 </section>
